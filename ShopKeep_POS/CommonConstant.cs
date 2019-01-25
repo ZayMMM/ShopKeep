@@ -9,7 +9,7 @@ namespace ShopKeep_POS
     public static class CommonConstant
     {
 
-        public static String DATA_SOURCE = "Data Source=DESKTOP-PN5972M; Initial Catalog=BOOK; Integrated Security=SSPI;";
+        public static String DATA_SOURCE = "Data Source=DESKTOP-PN5972M;Initial Catalog=BOOK;Integrated Security=True";
 
         public static String CREATED_BY = "System";
 

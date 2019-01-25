@@ -1,6 +1,6 @@
 ﻿namespace ShopKeep_POS
 {
-    partial class PurOrderConfirm
+    partial class PurOrderconfirm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,80 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGVOrderview = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVOrderview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbCancel = new System.Windows.Forms.RadioButton();
+            this.rbSuccess = new System.Windows.Forms.RadioButton();
+            this.rbProgress = new System.Windows.Forms.RadioButton();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DGVOrderview
+            // groupBox1
             // 
-            this.DGVOrderview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVOrderview.Location = new System.Drawing.Point(15, 134);
-            this.DGVOrderview.Name = "DGVOrderview";
-            this.DGVOrderview.Size = new System.Drawing.Size(955, 415);
-            this.DGVOrderview.TabIndex = 26;
-            this.DGVOrderview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVOrderview_CellDoubleClick);
+            this.groupBox1.Controls.Add(this.rbCancel);
+            this.groupBox1.Controls.Add(this.rbSuccess);
+            this.groupBox1.Controls.Add(this.rbProgress);
+            this.groupBox1.Location = new System.Drawing.Point(12, 16);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(123, 123);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Order Confirm";
             // 
-            // pictureBox1
+            // rbCancel
             // 
-            this.pictureBox1.Image = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.InitialImage = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
-            this.pictureBox1.TabIndex = 76;
-            this.pictureBox1.TabStop = false;
+            this.rbCancel.AutoSize = true;
+            this.rbCancel.Location = new System.Drawing.Point(27, 89);
+            this.rbCancel.Name = "rbCancel";
+            this.rbCancel.Size = new System.Drawing.Size(58, 17);
+            this.rbCancel.TabIndex = 2;
+            this.rbCancel.TabStop = true;
+            this.rbCancel.Text = "Cancel";
+            this.rbCancel.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // rbSuccess
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(240, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(732, 31);
-            this.label8.TabIndex = 77;
-            this.label8.Text = "Purchase Order List View";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbSuccess.AutoSize = true;
+            this.rbSuccess.Location = new System.Drawing.Point(27, 60);
+            this.rbSuccess.Name = "rbSuccess";
+            this.rbSuccess.Size = new System.Drawing.Size(66, 17);
+            this.rbSuccess.TabIndex = 1;
+            this.rbSuccess.TabStop = true;
+            this.rbSuccess.Text = "Success";
+            this.rbSuccess.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // rbProgress
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(757, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 20);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Double click to updte the row";
+            this.rbProgress.AutoSize = true;
+            this.rbProgress.Location = new System.Drawing.Point(27, 30);
+            this.rbProgress.Name = "rbProgress";
+            this.rbProgress.Size = new System.Drawing.Size(66, 17);
+            this.rbProgress.TabIndex = 0;
+            this.rbProgress.TabStop = true;
+            this.rbProgress.Text = "Progress";
+            this.rbProgress.UseVisualStyleBackColor = true;
             // 
-            // PurOrderConfirm
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(53, 147);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // PurOrderconfirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.DGVOrderview);
-            this.Name = "PurOrderConfirm";
+            this.ClientSize = new System.Drawing.Size(149, 179);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PurOrderconfirm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PurOrderConfirm";
-            ((System.ComponentModel.ISupportInitialize)(this.DGVOrderview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Order Confirm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DGVOrderview;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.RadioButton rbCancel;
+        public System.Windows.Forms.RadioButton rbSuccess;
+        public System.Windows.Forms.RadioButton rbProgress;
+        public System.Windows.Forms.Button btnSave;
+
     }
 }

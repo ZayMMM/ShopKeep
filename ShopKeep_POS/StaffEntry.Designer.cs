@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffEntry));
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNRC = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtStaffID = new System.Windows.Forms.TextBox();
@@ -60,6 +60,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cbRole = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             this.txtEmail.Location = new System.Drawing.Point(531, 398);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 22);
-            this.txtEmail.TabIndex = 70;
+            this.txtEmail.TabIndex = 15;
             // 
             // label9
             // 
@@ -87,7 +88,7 @@
             this.txtNRC.Location = new System.Drawing.Point(146, 364);
             this.txtNRC.Name = "txtNRC";
             this.txtNRC.Size = new System.Drawing.Size(215, 22);
-            this.txtNRC.TabIndex = 68;
+            this.txtNRC.TabIndex = 9;
             // 
             // label8
             // 
@@ -103,6 +104,7 @@
             // 
             this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
+            this.cbState.ItemHeight = 16;
             this.cbState.Items.AddRange(new object[] {
             "Ayeyarwady Region",
             "Bago Region",
@@ -131,7 +133,7 @@
             this.radioFemale.Location = new System.Drawing.Point(235, 399);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(72, 20);
-            this.radioFemale.TabIndex = 65;
+            this.radioFemale.TabIndex = 11;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
             this.radioFemale.UseVisualStyleBackColor = true;
@@ -143,7 +145,7 @@
             this.radioMale.Location = new System.Drawing.Point(145, 398);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(56, 20);
-            this.radioMale.TabIndex = 64;
+            this.radioMale.TabIndex = 10;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
@@ -155,7 +157,7 @@
             this.dtpDob.Location = new System.Drawing.Point(146, 284);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(215, 22);
-            this.dtpDob.TabIndex = 63;
+            this.dtpDob.TabIndex = 7;
             // 
             // label7
             // 
@@ -184,7 +186,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(215, 69);
-            this.txtAddress.TabIndex = 57;
+            this.txtAddress.TabIndex = 12;
             // 
             // txtPhoneNum
             // 
@@ -192,7 +194,7 @@
             this.txtPhoneNum.Location = new System.Drawing.Point(147, 324);
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.Size = new System.Drawing.Size(215, 22);
-            this.txtPhoneNum.TabIndex = 58;
+            this.txtPhoneNum.TabIndex = 8;
             // 
             // txtCity
             // 
@@ -200,7 +202,7 @@
             this.txtCity.Location = new System.Drawing.Point(531, 324);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(215, 22);
-            this.txtCity.TabIndex = 59;
+            this.txtCity.TabIndex = 13;
             // 
             // txtStaffName
             // 
@@ -208,7 +210,7 @@
             this.txtStaffName.Location = new System.Drawing.Point(146, 246);
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(215, 22);
-            this.txtStaffName.TabIndex = 60;
+            this.txtStaffName.TabIndex = 6;
             // 
             // label5
             // 
@@ -260,16 +262,6 @@
             this.label1.TabIndex = 56;
             this.label1.Text = "Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.InitialImage = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
-            this.pictureBox1.TabIndex = 71;
-            this.pictureBox1.TabStop = false;
-            // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -290,19 +282,20 @@
             this.btnSave.Location = new System.Drawing.Point(555, 67);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 30);
-            this.btnSave.TabIndex = 73;
+            this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtStaffID
             // 
+            this.txtStaffID.Enabled = false;
             this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStaffID.Location = new System.Drawing.Point(380, 71);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.ReadOnly = true;
             this.txtStaffID.Size = new System.Drawing.Size(125, 22);
-            this.txtStaffID.TabIndex = 75;
+            this.txtStaffID.TabIndex = 1;
             // 
             // label11
             // 
@@ -320,7 +313,7 @@
             this.txtPassword.Location = new System.Drawing.Point(145, 207);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(215, 22);
-            this.txtPassword.TabIndex = 77;
+            this.txtPassword.TabIndex = 4;
             // 
             // label12
             // 
@@ -338,7 +331,7 @@
             this.txtConfirmPassword.Location = new System.Drawing.Point(531, 207);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(215, 22);
-            this.txtConfirmPassword.TabIndex = 79;
+            this.txtConfirmPassword.TabIndex = 5;
             // 
             // label13
             // 
@@ -352,12 +345,13 @@
             // 
             // txtLginID
             // 
+            this.txtLginID.Enabled = false;
             this.txtLginID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLginID.Location = new System.Drawing.Point(380, 112);
             this.txtLginID.Name = "txtLginID";
             this.txtLginID.ReadOnly = true;
             this.txtLginID.Size = new System.Drawing.Size(125, 22);
-            this.txtLginID.TabIndex = 81;
+            this.txtLginID.TabIndex = 2;
             // 
             // label14
             // 
@@ -371,7 +365,10 @@
             // 
             // cbRole
             // 
+            this.cbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbRole.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbRole.FormattingEnabled = true;
+            this.cbRole.ItemHeight = 13;
             this.cbRole.Items.AddRange(new object[] {
             "Cashier",
             "Manager"});
@@ -390,11 +387,21 @@
             this.label15.TabIndex = 83;
             this.label15.Text = "Role";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
+            this.pictureBox1.TabIndex = 93;
+            this.pictureBox1.TabStop = false;
+            // 
             // StaffEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 447);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.txtLginID);
@@ -406,7 +413,6 @@
             this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNRC);
@@ -461,7 +467,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label11;
@@ -473,5 +478,6 @@
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

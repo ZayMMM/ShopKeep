@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txtUName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPwd = new System.Windows.Forms.TextBox();
@@ -36,7 +36,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +45,7 @@
             this.txtUName.Location = new System.Drawing.Point(336, 32);
             this.txtUName.Name = "txtUName";
             this.txtUName.Size = new System.Drawing.Size(100, 22);
-            this.txtUName.TabIndex = 0;
+            this.txtUName.TabIndex = 1;
             // 
             // label2
             // 
@@ -66,7 +65,7 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(100, 22);
-            this.txtPwd.TabIndex = 0;
+            this.txtPwd.TabIndex = 2;
             // 
             // label3
             // 
@@ -86,7 +85,7 @@
             this.btnLogin.Location = new System.Drawing.Point(253, 115);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 29);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -99,24 +98,18 @@
             this.btnClose.Location = new System.Drawing.Point(356, 115);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 29);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.InitialImage = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 27);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 101);
-            this.pictureBox1.TabIndex = 86;
+            this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Login
             // 
@@ -148,7 +141,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

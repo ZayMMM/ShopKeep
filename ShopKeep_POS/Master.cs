@@ -17,28 +17,28 @@ namespace ShopKeep_POS
             InitializeComponent();
         }
 
-        private void publisherToolStripMenuItem_Click(object sender, EventArgs e)
+        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Staff staff = new Staff();
             staff.Show();
         }
 
-        private void authorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void publisherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Publisher pub = new Publisher();
-            pub.Show();
+            Publisher publisher = new Publisher();
+            publisher.Show();
         }
 
-        private void authorToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void authorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Category cat = new Category();
-            cat.Show();
+            Author author = new Author();
+            author.Show();
         }
 
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Author aut = new Author();
-            aut.Show();
+            Category category = new Category();
+            category.Show();
         }
 
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,25 +47,25 @@ namespace ShopKeep_POS
             book.Show();
         }
 
-        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
+        private void discountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Member mem = new Member();
-            mem.Show();
+            Discount discount = new Discount();
+            discount.Show();
         }
 
         private void purchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Purchase_Order puror = new Purchase_Order();
-            puror.Show();
+            PurOrderList purcharseorderlist = new PurOrderList();
+            purcharseorderlist.Show();
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockList stocklist = new StockList();
+            stocklist.Show();
         }
 
         private void saleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PurOrderConfirm purorcon = new PurOrderConfirm();
-            purorcon.Show();
-        }
-
-        private void customerOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Sale sale = new Sale();
             sale.Show();
@@ -73,28 +73,15 @@ namespace ShopKeep_POS
 
         private void damageLossToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cus_Order cusor = new Cus_Order();
-            cusor.Show();
+            DamageLoss damageloss = new DamageLoss();
+            damageloss.Show();
         }
 
-        private void customerOrderConfirmToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Master_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DamageLoss dmglos = new DamageLoss();
-            dmglos.Show();
+            Application.Exit();
         }
-
-        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StockEntry stety = new StockEntry();
-            stety.Show();
-
-        }
-
-      
-
-      
-
-        
+   
 
     }
 }

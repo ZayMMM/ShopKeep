@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PublisherEntry));
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbState = new System.Windows.Forms.ComboBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(419, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 22);
-            this.textBox4.TabIndex = 20;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(419, 164);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(250, 22);
+            this.txtEmail.TabIndex = 3;
             // 
             // label6
             // 
@@ -64,47 +65,63 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Email";
             // 
-            // comboBox1
+            // cbState
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(419, 349);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 24);
-            this.comboBox1.TabIndex = 18;
+            this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbState.FormattingEnabled = true;
+            this.cbState.Items.AddRange(new object[] {
+            "Ayeyarwady Region",
+            "Bago Region",
+            "Chin State",
+            "Kachin State",
+            "Kayah State",
+            "Kayin State",
+            "Magway Region",
+            "Mandalay Repion",
+            "Mon State",
+            "Rakhine State",
+            "Shan State",
+            "Sagaing Region",
+            "Tanintharyi",
+            "Yangon Region",
+            "Naypyidaw Union Territory"});
+            this.cbState.Location = new System.Drawing.Point(419, 349);
+            this.cbState.Name = "cbState";
+            this.cbState.Size = new System.Drawing.Size(250, 24);
+            this.cbState.TabIndex = 6;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(419, 221);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 79);
-            this.textBox2.TabIndex = 14;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(419, 221);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(250, 79);
+            this.txtAddress.TabIndex = 4;
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(419, 117);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 22);
-            this.textBox5.TabIndex = 15;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(419, 117);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(250, 22);
+            this.txtPhone.TabIndex = 2;
             // 
-            // textBox3
+            // txtCity
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(419, 312);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 22);
-            this.textBox3.TabIndex = 16;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Location = new System.Drawing.Point(419, 312);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(250, 22);
+            this.txtCity.TabIndex = 5;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(419, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 17;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(419, 73);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(250, 22);
+            this.txtName.TabIndex = 1;
             // 
             // label5
             // 
@@ -168,16 +185,6 @@
             this.label10.Text = "Publisher Information Entry Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.InitialImage = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
-            this.pictureBox1.TabIndex = 85;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -186,26 +193,35 @@
             this.btnSave.Location = new System.Drawing.Point(68, 353);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 30);
-            this.btnSave.TabIndex = 88;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
+            this.pictureBox1.TabIndex = 93;
+            this.pictureBox1.TabStop = false;
             // 
             // PublisherEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 403);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbState);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -221,21 +237,21 @@
         }
 
         #endregion
+        public System.Windows.Forms.TextBox txtAddress;
+        public System.Windows.Forms.TextBox txtPhone;
+        public System.Windows.Forms.TextBox txtCity;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.ComboBox cbState;
 
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;        
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -18,11 +18,11 @@ namespace ShopKeep_POS
         {
             InitializeComponent();
         }
-        string constr;
+        String constr;
         SqlConnection consql;
-        DataTable dtstaff;
-        string staffID;
-        string selectedStaffID, selectedLoginID, selectedAddressID;
+        DataTable dtStaff;
+        String staffID;
+        String selectedStaffID, selectedLoginID, selectedAddressID;
 
 
         void connection()
@@ -34,15 +34,15 @@ namespace ShopKeep_POS
 
         void FillData()
         {
-            String query = "SELECT STAFF_ID,S.STAFF_LOGIN_ID,S.ADDRESS_ID,STAFF_NAME,PASSWORD,COMFIRM_PASSWORD,ROLE,GENDER,STAFF_MAIL,PHONE,NRC,ADDRESS,CITY,STATE" +
-                            " FROM STAFF S FULL OUTER JOIN STAFF_DETAIL T ON S.STAFF_LOGIN_ID=T.STAFF_LOGIN_ID" +
-                            " FULL OUTER JOIN ADDRESS A ON S.ADDRESS_ID=A.ADDRESS_ID order by S.STAFF_ID";
+            String query = "SELECT STAFF_ID,S.STAFF_LOGIN_ID,S.ADD_ID,STAFF_NAME,PASSWORD,CON_PASSWORD,ROLE,GENDER,STAFF_MAIL,PHONE,NRC,ADDRESS,CITY,STATE" +
+                            " FROM STAFF S INNER JOIN STAFF_DETAIL T ON S.STAFF_LOGIN_ID=T.STAFF_LOGIN_ID" +
+                            " INNER JOIN ADDRESS A ON S.ADD_ID=A.ADD_ID order by S.STAFF_ID";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet Dset = new DataSet();
             adapter.Fill(Dset, "STAFF");
-            dtstaff = Dset.Tables["STAFF"];
-            Dgstaff.DataSource = dtstaff;
+            dtStaff = Dset.Tables["STAFF"];
+            Dgstaff.DataSource = dtStaff;
 
 
             Dgstaff.Columns[0].Width = 100;
@@ -59,8 +59,6 @@ namespace ShopKeep_POS
             Dgstaff.Columns[11].Width = 100;
             Dgstaff.Columns[12].Width = 100;
             Dgstaff.Columns[13].Width = 100;
-            
-
         }
 
         public void refreshform()
@@ -109,9 +107,10 @@ namespace ShopKeep_POS
             DataRow dr;
             int i;
             i = Dgstaff.CurrentRow.Index;
-            dr = dtstaff.Rows[i];
+            dr = dtStaff.Rows[i];
             StaffEntry staffEntry = new StaffEntry(this,CommonConstant.DB_UPDATE);
             staffEntry.txtStaffID.Text = dr[0].ToString();
+            staffEntry.txtLginID.Text = dr[1].ToString(); // Add
             staffEntry.loginID = dr[1].ToString();
             staffEntry.addID = dr[2].ToString();
             staffEntry.txtStaffName.Text = dr[3].ToString();
@@ -135,14 +134,17 @@ namespace ShopKeep_POS
             staffEntry.txtCity.Text = dr[12].ToString();
             staffEntry.cbState.Text = dr[13].ToString();
             
+            
             staffEntry.Show();
         }
+
+
         private void Dgstaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataRow dr;
             int i;
             i = Dgstaff.CurrentRow.Index;
-            dr = dtstaff.Rows[i];
+            dr = dtStaff.Rows[i];
             selectedStaffID = dr[0].ToString();
             selectedLoginID = dr[1].ToString();
             selectedAddressID = dr[2].ToString();
@@ -160,7 +162,7 @@ namespace ShopKeep_POS
             SqlCommand loginCmd = new SqlCommand(loginDelSql, consql);
             loginCmd.ExecuteNonQuery();
 
-            string addressDelSql = "Delete from ADDRESS where ADDRESS_ID ='" + selectedAddressID + "'";
+            string addressDelSql = "Delete from ADDRESS where ADD_ID ='" + selectedAddressID + "'";
             SqlCommand addressCmd = new SqlCommand(addressDelSql, consql);
             addressCmd.ExecuteNonQuery();
 

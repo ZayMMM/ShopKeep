@@ -7,20 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ShopKeep_POS
 {
-    public partial class PurOrderConfirm : Form
+    public partial class PurOrderconfirm : Form
     {
-        public PurOrderConfirm()
+        PurOrderList purorlst;
+
+        public String constr,orderID;
+        SqlConnection consql;
+        public void connection()
         {
-            InitializeComponent();
+            constr = CommonConstant.DATA_SOURCE;
+            consql = new SqlConnection(constr);
+            consql.Open();
         }
 
-        private void DGVOrderview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public PurOrderconfirm(PurOrderList purorlst)
         {
-            PurOrderDT purordt = new PurOrderDT();
-            purordt.Show();
+            InitializeComponent();
+            this.purorlst = purorlst;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            String Confirm,strConfirm;
+            if (rbProgress.Checked)
+            {
+                Confirm = "Progress";
+            }else if(rbSuccess.Checked)
+            {
+                Confirm = "Success";
+            }
+            else
+            {
+                Confirm = "Cancel";
+            }
+            connection();
+            strConfirm = "UPDATE PURCHASE_ORDER SET ORDER_STATUS='" + Confirm + "' WHERE ORDER_ID ='" + orderID + "'";
+            SqlCommand mycmd = new SqlCommand(strConfirm, consql);
+            mycmd.ExecuteNonQuery();
+            MessageBox.Show(CommonConstant.DB_UPDATE);
+            purorlst.connection();
+            purorlst.FillData();
+            this.Close();
+            
+
         }
     }
 }

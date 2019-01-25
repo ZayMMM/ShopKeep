@@ -27,16 +27,17 @@ namespace ShopKeep_POS
 
         public void connection()
         {
-            constr = "Data Source=DESKTOP-PN5972M; Initial Catalog=BOOK; Integrated Security=SSPI;";
+            constr = CommonConstant.DATA_SOURCE;
             consql = new SqlConnection(constr);
             consql.Open();
         }
 
+        DataSet Dset;
         public void FillData()
         {
             string query = "select AUT_ID,AUT_NAME,AUT_SUB_NAME,GENDER from AUTHOR";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "Author");
             datatableAuthor = Dset.Tables["Author"];
             authorDataGridView.DataSource = datatableAuthor;
@@ -53,32 +54,33 @@ namespace ShopKeep_POS
 
         }
 
-        void idGenerate()
+        void getAuthorID()
         {
-            string OID = "select AUT_ID from AUTHOR ORDER BY AUT_ID";
+            connection();
+            string OID = "SELECT AUT_ID FROM AUTHOR ORDER BY AUT_ID";
             string AuthorName;
             int AuthorID;
-            string format = "0000000";
+            string format = "000000";
             SqlDataAdapter ad = new SqlDataAdapter(OID, consql);
             DataSet ds = new DataSet();
             ad.Fill(ds, "Author");
             if (ds.Tables["Author"].Rows.Count > 0)
             {
                 AuthorName = ds.Tables["Author"].Rows[ds.Tables["Author"].Rows.Count - 1][0].ToString();
-                AuthorID = int.Parse(AuthorName.Substring(1, (AuthorName.Length - 1)));
-                authorid = "A" + ((AuthorID + 1).ToString(format));
+                AuthorID = int.Parse(AuthorName.Substring(2, (AuthorName.Length - 2)));
+                authorid = "AU" + ((AuthorID + 1).ToString(format));
             }
             else
             {
-                authorid = "A0000001";
+                authorid = "AU000001";
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            idGenerate();
-            AuthorEntry authorEntry = new AuthorEntry(this,"I");
-            authorEntry.authorid = this.authorid;
+            getAuthorID();
+            AuthorEntry authorEntry = new AuthorEntry(this,CommonConstant.DB_INSERT);
+            authorEntry.authorid = authorid;
             authorEntry.Show();
         }
 
@@ -103,8 +105,12 @@ namespace ShopKeep_POS
             DataRow dr;
             int i;
             i = authorDataGridView.CurrentRow.Index;
-            dr = datatableAuthor.Rows[i];
-            delete = dr[0].ToString();
+            if (i == 0 || i == datatableAuthor.Rows.Count - 1)
+            {
+                dr = datatableAuthor.Rows[i];
+                delete = dr[0].ToString();
+            }
+
         }
 
         private void authorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +119,7 @@ namespace ShopKeep_POS
             int i;
             i = authorDataGridView.CurrentRow.Index;
             dr = datatableAuthor.Rows[i];
-            AuthorEntry authorentry = new AuthorEntry(this,"U");
+            AuthorEntry authorentry = new AuthorEntry(this, CommonConstant.DB_UPDATE);
             authorentry.Show();
             authorentry.authorid = dr[0].ToString();
             authorentry.txtName.Text = dr[1].ToString();
@@ -129,6 +135,14 @@ namespace ShopKeep_POS
             }
             authorentry.Show();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["Author"].DefaultView;
+            dv.RowFilter = "AUT_NAME LIKE '%" + txtSearch.Text.Trim() + "%'";
+
+        }
+
 
 
     }

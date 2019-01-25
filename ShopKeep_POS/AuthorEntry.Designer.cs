@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorEntry));
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.radioMale = new System.Windows.Forms.RadioButton();
@@ -35,9 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.radioFemale.Location = new System.Drawing.Point(183, 285);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(72, 20);
-            this.radioFemale.TabIndex = 22;
+            this.radioFemale.TabIndex = 4;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
             this.radioFemale.UseVisualStyleBackColor = false;
@@ -76,7 +77,7 @@
             this.radioMale.Location = new System.Drawing.Point(110, 284);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(56, 20);
-            this.radioMale.TabIndex = 20;
+            this.radioMale.TabIndex = 3;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = false;
@@ -87,7 +88,7 @@
             this.txtSubName.Location = new System.Drawing.Point(110, 246);
             this.txtSubName.Name = "txtSubName";
             this.txtSubName.Size = new System.Drawing.Size(148, 22);
-            this.txtSubName.TabIndex = 19;
+            this.txtSubName.TabIndex = 2;
             // 
             // label2
             // 
@@ -107,7 +108,7 @@
             this.txtName.Location = new System.Drawing.Point(110, 205);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(148, 22);
-            this.txtName.TabIndex = 17;
+            this.txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -121,16 +122,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.InitialImage = global::ShopKeep_POS.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(44, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
-            this.pictureBox1.TabIndex = 72;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -139,7 +130,7 @@
             this.btnSave.Location = new System.Drawing.Point(99, 325);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 30);
-            this.btnSave.TabIndex = 74;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -156,14 +147,23 @@
             this.label10.Text = "Author Information Entry Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(44, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 101);
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
             // AuthorEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 368);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.radioFemale);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.radioMale);
@@ -186,7 +186,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label10;
 
@@ -194,6 +193,7 @@
         public System.Windows.Forms.RadioButton radioMale;
         public System.Windows.Forms.TextBox txtSubName;
         public System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.PictureBox pictureBox1;
         
     }
 }

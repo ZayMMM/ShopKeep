@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +64,7 @@
     <Compile Include="BookEntry.Designer.cs">
       <DependentUpon>BookEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryEntity.cs" />
     <Compile Include="CommonConstant.cs" />
     <Compile Include="CommonFunction.cs" />
     <Compile Include="Cus_Order.cs">
@@ -71,24 +73,47 @@
     <Compile Include="Cus_Order.Designer.cs">
       <DependentUpon>Cus_Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberEntry.cs">
+    <Compile Include="DamageLossEntry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberEntry.Designer.cs">
-      <DependentUpon>MemberEntry.cs</DependentUpon>
+    <Compile Include="DamageLossEntry.Designer.cs">
+      <DependentUpon>DamageLossEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiscountEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscountEntry.Designer.cs">
+      <DependentUpon>DiscountEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageConstant.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PublisherEntry.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PublisherEntry.Designer.cs">
       <DependentUpon>PublisherEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="PurOrderConfirm.cs">
+    <Compile Include="Purchase_Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PurOrderConfirm.Designer.cs">
-      <DependentUpon>PurOrderConfirm.cs</DependentUpon>
+    <Compile Include="Purchase_Order.Designer.cs">
+      <DependentUpon>Purchase_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurOrderconfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurOrderconfirm.Designer.cs">
+      <DependentUpon>PurOrderconfirm.cs</DependentUpon>
     </Compile>
     <Compile Include="PurOrderDT.cs">
       <SubType>Form</SubType>
@@ -96,17 +121,17 @@
     <Compile Include="PurOrderDT.Designer.cs">
       <DependentUpon>PurOrderDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurOrderList.Designer.cs">
+      <DependentUpon>PurOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Member.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Member.Designer.cs">
-      <DependentUpon>Member.cs</DependentUpon>
     </Compile>
     <Compile Include="Publisher.cs">
       <SubType>Form</SubType>
@@ -156,12 +181,6 @@
     <Compile Include="StaffEntry.Designer.cs">
       <DependentUpon>StaffEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Purchase_Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Purchase_Order.Designer.cs">
-      <DependentUpon>Purchase_Order.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sale.cs">
@@ -176,23 +195,29 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock.cs">
+    <Compile Include="AvalibleStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock.Designer.cs">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <Compile Include="AvalibleStock.Designer.cs">
+      <DependentUpon>AvalibleStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockEntry.cs">
+    <Compile Include="StockEnty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockEntry.Designer.cs">
-      <DependentUpon>StockEntry.cs</DependentUpon>
+    <Compile Include="StockEnty.Designer.cs">
+      <DependentUpon>StockEnty.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaction.cs">
+    <Compile Include="StockList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaction.Designer.cs">
-      <DependentUpon>Transaction.cs</DependentUpon>
+    <Compile Include="StockList.Designer.cs">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AuthorEntry.resx">
       <DependentUpon>AuthorEntry.cs</DependentUpon>
@@ -206,23 +231,32 @@
     <EmbeddedResource Include="Cus_Order.resx">
       <DependentUpon>Cus_Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberEntry.resx">
-      <DependentUpon>MemberEntry.cs</DependentUpon>
+    <EmbeddedResource Include="DamageLossEntry.resx">
+      <DependentUpon>DamageLossEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscountEntry.resx">
+      <DependentUpon>DiscountEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PublisherEntry.resx">
       <DependentUpon>PublisherEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurOrderConfirm.resx">
-      <DependentUpon>PurOrderConfirm.cs</DependentUpon>
+    <EmbeddedResource Include="Purchase_Order.resx">
+      <DependentUpon>Purchase_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurOrderconfirm.resx">
+      <DependentUpon>PurOrderconfirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurOrderDT.resx">
       <DependentUpon>PurOrderDT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PurOrderList.resx">
+      <DependentUpon>PurOrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Member.resx">
-      <DependentUpon>Member.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Publisher.resx">
       <DependentUpon>Publisher.cs</DependentUpon>
@@ -248,33 +282,28 @@
     <EmbeddedResource Include="StaffEntry.resx">
       <DependentUpon>StaffEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Purchase_Order.resx">
-      <DependentUpon>Purchase_Order.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock.resx">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <EmbeddedResource Include="AvalibleStock.resx">
+      <DependentUpon>AvalibleStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockEntry.resx">
-      <DependentUpon>StockEntry.cs</DependentUpon>
+    <EmbeddedResource Include="StockEnty.resx">
+      <DependentUpon>StockEnty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaction.resx">
-      <DependentUpon>Transaction.cs</DependentUpon>
+    <EmbeddedResource Include="StockList.resx">
+      <DependentUpon>StockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -290,55 +319,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\books.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\headerbooks.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Entry_BG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home_BG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Author_BG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MainFrame_BG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Jonathan Borba  2019-01-03 03-47-19.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Tomasz Gawłowski  2019-01-02 07-59-46.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\springMVC.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\w1.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\w2.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\w3.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\africa-african-animal-33045.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ash-edmonds-462516-unsplash.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cam-dicecca-116639-unsplash.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\casey-allen-276030-unsplash.jpg" />
+    <None Include="Resources\iStock-5064329521.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

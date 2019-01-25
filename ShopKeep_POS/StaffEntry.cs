@@ -15,25 +15,47 @@ namespace ShopKeep_POS
     {
 
         Staff staff;
-        DataSet ds = new DataSet();
+        //DataSet ds = new DataSet();
         public String addID;
         public String loginID;
-        string id, name, dob, nrc, add, cty, state, email, gen, password, confirmPwd, role, phone, test, constr, strStaff, strStaffDetail, strAddress;
+        string id, name, dob, nrc, add, cty, state, email, gen, password, confirmPwd, role, phone, Test, constr, strStaff, strStaffDetail, strAddress;
         SqlConnection consql;
         Boolean isValid = true;
 
-        public StaffEntry(Staff staff,string a)
+        public StaffEntry(Staff staff,string Test)
         {
             InitializeComponent();
             this.staff = staff;
-            this.test = a;
+            this.Test = Test;
         }
 
         void connection()
         {
-            constr = "Data Source=DESKTOP-PN5972M; Initial Catalog=BOOK; Integrated Security=SSPI;";
+            constr = CommonConstant.DATA_SOURCE;
             consql = new SqlConnection(constr);
             consql.Open();
+        }
+
+        void getAddressID()
+        {
+            string addressID = "select ADD_ID from ADDRESS ORDER BY ADD_ID";
+            string AName;
+            int AID;
+            string format = "0000000";
+            SqlDataAdapter ad = new SqlDataAdapter(addressID, consql);
+            DataSet ds = new DataSet();
+            ad.Fill(ds, "ADDRESS");
+
+            if (ds.Tables["ADDRESS"].Rows.Count > 0)
+            {
+                AName = ds.Tables["ADDRESS"].Rows[ds.Tables["ADDRESS"].Rows.Count - 1][0].ToString();
+                AID = int.Parse(AName.Substring(1, (AName.Length - 1)));
+                addID = "A" + ((AID + 1).ToString(format));
+            }
+            else
+            {
+                addID = "A0000001";
+            }
         }
 
 
@@ -125,7 +147,7 @@ namespace ShopKeep_POS
 
             if (isValid)
             {
-                if (test.Equals(CommonConstant.DB_INSERT))
+                if (Test.Equals(CommonConstant.DB_INSERT))
                 {
                     getAddressID();
                     strAddress = "INSERT INTO ADDRESS VALUES ('" + addID + "',N'" + add + "',N'" + cty + "','" + state + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
@@ -136,7 +158,7 @@ namespace ShopKeep_POS
                     SqlCommand staffCmd = new SqlCommand(strStaffDetail, consql);
                     staffCmd.ExecuteNonQuery();
 
-                    strStaff = "INSERT INTO STAFF VALUES ('" + id + "','" + loginID + "','" + addID + "',N'" + name + "','" + gen + "','" + email + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    strStaff = "INSERT INTO STAFF VALUES ('" + id + "','" + loginID + "','" + addID + "',N'" + name + "','" + gen + "','" + email + "','"+phone+"','"+nrc+"','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                     SqlCommand staffDetailCmd = new SqlCommand(strStaff, consql);
                     staffDetailCmd.ExecuteNonQuery();
 
@@ -146,12 +168,12 @@ namespace ShopKeep_POS
                     MessageBox.Show(MessageConstant.INSERT_MSG);
                     this.Close();
 
-                }else if(test.Equals(CommonConstant.DB_UPDATE)){
-                    strAddress = "UPDATE ADDRESS SET ADDRESS='" + add + "',CITY=N'" + cty + "',STATE=N'" + state + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE ADDRESS_ID ='"+addID+"'";
+                }else if(Test.Equals(CommonConstant.DB_UPDATE)){
+                    strAddress = "UPDATE ADDRESS SET ADDRESS='" + add + "',CITY=N'" + cty + "',STATE=N'" + state + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE ADD_ID ='"+addID+"'";
                     SqlCommand addressCmd = new SqlCommand(strAddress, consql);
                     addressCmd.ExecuteNonQuery();
 
-                    strStaffDetail = "UPDATE STAFF_DETAIL SET PASSWORD=N'" + password + "',COMFIRM_PASSWORD=N'" + confirmPwd + "',ROLE='" + role + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_LOGIN_ID='" + loginID + "'";
+                    strStaffDetail = "UPDATE STAFF_DETAIL SET PASSWORD=N'" + password + "',CON_PASSWORD=N'" + confirmPwd + "',ROLE='" + role + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_LOGIN_ID='" + loginID + "'";
                     SqlCommand staffDetailCmd = new SqlCommand(strStaffDetail, consql);
                     staffDetailCmd.ExecuteNonQuery();
 
@@ -166,27 +188,7 @@ namespace ShopKeep_POS
             }           
         }
 
-        void getAddressID()
-        {
-            string addressID = "select ADDRESS_ID from ADDRESS ORDER BY ADDRESS_ID";
-            string AName;
-            int AID;
-            string format = "0000000";
-            SqlDataAdapter ad = new SqlDataAdapter(addressID, consql);
-            DataSet ds = new DataSet();
-            ad.Fill(ds, "ADDRESS");
-
-            if (ds.Tables["ADDRESS"].Rows.Count > 0)
-            {
-                AName = ds.Tables["ADDRESS"].Rows[ds.Tables["ADDRESS"].Rows.Count - 1][0].ToString();
-                AID = int.Parse(AName.Substring(1, (AName.Length - 1)));
-                addID = "A" + ((AID + 1).ToString(format));
-            }
-            else
-            {
-                addID = "A0000001";
-            }
-        }
+        
 
         void getLoginID()
         {

@@ -1,159 +1,4 @@
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Form1.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Home.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Add_Publisher.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Add_Book.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Add_Member.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Add_Category.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Order.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-C:\Users\Aung Khant\Documents\Visual Studio 2013\Projects\PGDCA Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Form1.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Home.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff_Order.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-E:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-E:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Cus_Order.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Form1.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Home.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff_Order.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-F:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-F:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-F:\Project\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Cus_Order.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Form2.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Form1.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Home.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff_Order.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-F:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-E:\Project\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Report.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Cus_Order.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Report.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.StaffEntry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.AuthorEntry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.PublisherEntry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Login.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Master.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.BookEntry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.MemberEntry.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderConfirm.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderDT.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.Purchase_Order.resources
-C:\Users\Aung Khant\Desktop\Stock Information Entry\PGDCA\ShopKeep_POS\ShopKeep_POS\obj\Debug\ShopKeep_POS.StockEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.AuthorEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.BookEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Cus_Order.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.MemberEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.PublisherEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderConfirm.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderDT.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Report.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLoss.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Entry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Login.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Master.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.StaffEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Purchase_Order.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.StockEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.0\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe.config
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\bin\Debug\ShopKeep_POS.exe
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\bin\Debug\ShopKeep_POS.pdb
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.csprojResolveAssemblyReference.cache
@@ -161,12 +6,15 @@ Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\D
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Book.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.BookEntry.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Cus_Order.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.MemberEntry.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.DamageLossEntry.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Discount.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.DiscountEntry.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.PublisherEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderConfirm.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Purchase_Order.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderconfirm.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderDT.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.PurOrderList.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Report.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Member.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Publisher.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Category.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Author.resources
@@ -175,11 +23,13 @@ Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\D
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Login.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Master.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.StaffEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Purchase_Order.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Properties.Resources.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Sale.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Staff.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Stock.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.StockEntry.resources
-Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Transaction.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.AvalibleStock.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.StockEnty.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.StockList.resources
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.Test.resources
 Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.csproj.GenerateResource.Cache
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.exe
+Q:\PGDCA Project\visual studio 2013\Project\ShopKeep_POS_V1.1\ShopKeep_POS\obj\Debug\ShopKeep_POS.pdb
