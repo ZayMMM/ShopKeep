@@ -43,6 +43,13 @@
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.damageLossToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bestSellerChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staffReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publisherReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.authorReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,9 +161,66 @@
             // 
             // reportsToolStripMenuItem
             // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bestSellerChartToolStripMenuItem,
+            this.staffReportToolStripMenuItem,
+            this.publisherReportToolStripMenuItem,
+            this.authorReportToolStripMenuItem,
+            this.categoryReportToolStripMenuItem,
+            this.stockReportToolStripMenuItem,
+            this.bookReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // bestSellerChartToolStripMenuItem
+            // 
+            this.bestSellerChartToolStripMenuItem.Name = "bestSellerChartToolStripMenuItem";
+            this.bestSellerChartToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.bestSellerChartToolStripMenuItem.Text = "BestSellerChart";
+            this.bestSellerChartToolStripMenuItem.Click += new System.EventHandler(this.bestSellerChartToolStripMenuItem_Click);
+            // 
+            // staffReportToolStripMenuItem
+            // 
+            this.staffReportToolStripMenuItem.Name = "staffReportToolStripMenuItem";
+            this.staffReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.staffReportToolStripMenuItem.Text = "Staff Report";
+            this.staffReportToolStripMenuItem.Click += new System.EventHandler(this.staffReportToolStripMenuItem_Click);
+            // 
+            // publisherReportToolStripMenuItem
+            // 
+            this.publisherReportToolStripMenuItem.Name = "publisherReportToolStripMenuItem";
+            this.publisherReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.publisherReportToolStripMenuItem.Text = "Publisher Report";
+            this.publisherReportToolStripMenuItem.Click += new System.EventHandler(this.publisherReportToolStripMenuItem_Click);
+            // 
+            // authorReportToolStripMenuItem
+            // 
+            this.authorReportToolStripMenuItem.Name = "authorReportToolStripMenuItem";
+            this.authorReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.authorReportToolStripMenuItem.Text = "Author Report";
+            this.authorReportToolStripMenuItem.Click += new System.EventHandler(this.authorReportToolStripMenuItem_Click);
+            // 
+            // categoryReportToolStripMenuItem
+            // 
+            this.categoryReportToolStripMenuItem.Name = "categoryReportToolStripMenuItem";
+            this.categoryReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.categoryReportToolStripMenuItem.Text = "Category Report";
+            this.categoryReportToolStripMenuItem.Click += new System.EventHandler(this.categoryReportToolStripMenuItem_Click);
+            // 
+            // stockReportToolStripMenuItem
+            // 
+            this.stockReportToolStripMenuItem.Name = "stockReportToolStripMenuItem";
+            this.stockReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.stockReportToolStripMenuItem.Text = "Stock Report";
+            this.stockReportToolStripMenuItem.Click += new System.EventHandler(this.stockReportToolStripMenuItem_Click);
+            // 
+            // bookReportToolStripMenuItem
+            // 
+            this.bookReportToolStripMenuItem.Name = "bookReportToolStripMenuItem";
+            this.bookReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.bookReportToolStripMenuItem.Text = "Book Report";
+            this.bookReportToolStripMenuItem.Click += new System.EventHandler(this.bookReportToolStripMenuItem_Click);
             // 
             // Master
             // 
@@ -195,6 +259,13 @@
         private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem damageLossToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bestSellerChartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staffReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publisherReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem authorReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoryReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookReportToolStripMenuItem;
 
 
     }

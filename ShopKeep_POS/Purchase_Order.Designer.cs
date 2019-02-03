@@ -123,6 +123,7 @@
             // 
             // txtBookid
             // 
+            this.txtBookid.Enabled = false;
             this.txtBookid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookid.Location = new System.Drawing.Point(375, 165);
             this.txtBookid.Name = "txtBookid";
@@ -259,7 +260,7 @@
             this.cbBookname.Name = "cbBookname";
             this.cbBookname.Size = new System.Drawing.Size(173, 24);
             this.cbBookname.TabIndex = 3;
-            this.cbBookname.SelectedIndexChanged += new System.EventHandler(this.cbBookid_SelectedIndexChanged);
+            this.cbBookname.SelectedIndexChanged += new System.EventHandler(this.cbBookname_SelectedIndexChanged);
             // 
             // purorderList
             // 

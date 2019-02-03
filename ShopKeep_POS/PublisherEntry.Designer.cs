@@ -70,21 +70,21 @@
             this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.Items.AddRange(new object[] {
-            "Ayeyarwady Region",
-            "Bago Region",
-            "Chin State",
-            "Kachin State",
-            "Kayah State",
-            "Kayin State",
-            "Magway Region",
-            "Mandalay Repion",
-            "Mon State",
-            "Rakhine State",
-            "Shan State",
-            "Sagaing Region",
+            "Ayeyarwady",
+            "Bago",
+            "Chin",
+            "Kachin",
+            "Kayah",
+            "Kayin",
+            "Magway",
+            "Mandalay",
+            "Mon",
+            "Rakhine",
+            "Shan",
+            "Sagaing",
             "Tanintharyi",
-            "Yangon Region",
-            "Naypyidaw Union Territory"});
+            "Yangon",
+            "NayPyiDaw"});
             this.cbState.Location = new System.Drawing.Point(419, 349);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(250, 24);

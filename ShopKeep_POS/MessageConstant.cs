@@ -14,6 +14,7 @@ namespace ShopKeep_POS
 
         public static String SAVE_CONFIRM = "Are You Sure Save !";
         public static String DELETE_CONFIRM = "Are You Sure Delete !";
+        public static String SELECT_ONE = "Please Select One Row For Delete !";
 
         public static class LOGIN
         {
@@ -31,6 +32,7 @@ namespace ShopKeep_POS
             public static String PHONE = "Please Enter Phone Number !";
             public static String NRC = "Please Enter NRC Number !";
             public static String GENDER = "Please Select Gender !";
+            public static String DOB = "Please Enter Date Of Birth !";
             public static String City = "Please Enter City !";
             public static String STATE = "Please Select Satate !";
             public static String EMAIL = "Please Enter Email !";
@@ -40,6 +42,43 @@ namespace ShopKeep_POS
         {
             public static String AUTHOR_NAME = "Please Enter Author Name !";
         }
+
+        public static class PUBLISHER
+        {
+            public static String PUB_NAME = "Please Enter Publisher Name !";
+            public static String PUB_PHONE = "Please Enter Publisher Phone !";
+            public static String PUB_EMAIL = "Please Enter Publisher Email !";
+            public static String PUB_CITY = "Please Enter Publisher City !";
+            public static String PUB_STATE = "Please Enter Publisher State !";
+        }
+
+        public static class CATEGORY
+        {
+            public static String CATEGORY_NAME = "Please Enter Category Name !";
+
+        }
+
+        public static class BOOK
+        {
+            public static String BOOK_TITLE = "Please Enter Book Name !";
+            public static String BOOK_PRICE = "Please Enter Book Price !";
+            public static String PRICE_FORMAT = "Please Check Your Price !";
+        }
+
+        public static class PURCAHSE
+        {
+            public static String PURCHASE_QTY = "Please Enter Quantity !";
+            public static String SELECT_ONE = "Please Select One Row For Delete !";
+            public static String ORDER_CONFIRM = "Please Add One Record !";
+        }
+
+        public static class SALE
+        {
+            public static String SALE_CONFIRM = "Please Add One Record !";
+            public static String SALE_SUCCESS = "Finished Sale !";
+        }
+
+
        
     }
 }

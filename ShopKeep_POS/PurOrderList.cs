@@ -32,12 +32,13 @@ namespace ShopKeep_POS
             consql.Open();
         }
 
+        DataSet Dset;
         public void FillData()
         {
             String query = "SELECT ORDER_ID,P.PUB_ID,P.PUB_NAME,ORDER_STATUS,ORDER_DATE,DUE_DATE,PO.CREATED_BY,PO.CREATED_DATE,PO.LAST_UPDATED_DATE FROM PURCHASE_ORDER PO INNER JOIN PUBLISHER P ON PO.PUB_ID=P.PUB_ID";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "PurOrder");
             dtPurOrder = Dset.Tables["PurOrder"];
             orderviewDataGridView.DataSource = dtPurOrder;
@@ -49,18 +50,22 @@ namespace ShopKeep_POS
             orderviewDataGridView.Columns[4].HeaderText = "ORDER_DATE";
             orderviewDataGridView.Columns[5].HeaderText = "DUE_DATE";
             orderviewDataGridView.Columns[6].HeaderText = "CREATED_BY";
+
             orderviewDataGridView.Columns[7].HeaderText = "CREATED_DATE";
             orderviewDataGridView.Columns[8].HeaderText = "LAST_UPDATED_DATE";
 
-            orderviewDataGridView.Columns[0].Width = 100;
-            orderviewDataGridView.Columns[1].Width = 100;
-            orderviewDataGridView.Columns[2].Width = 100;
-            orderviewDataGridView.Columns[3].Width = 100;
-            orderviewDataGridView.Columns[4].Width = 100;
-            orderviewDataGridView.Columns[5].Width = 100;
-            orderviewDataGridView.Columns[6].Width = 100;
-            orderviewDataGridView.Columns[7].Width = 100;
-            orderviewDataGridView.Columns[8].Width = 100;
+            orderviewDataGridView.Columns[0].Width = 150;
+            orderviewDataGridView.Columns[1].Width = 150;
+            orderviewDataGridView.Columns[2].Width = 180;
+            orderviewDataGridView.Columns[3].Width = 150;
+            orderviewDataGridView.Columns[4].Width = 150;
+            orderviewDataGridView.Columns[5].Width = 150;
+            orderviewDataGridView.Columns[6].Width = 150;
+
+            orderviewDataGridView.Columns[7].Visible = false;
+            orderviewDataGridView.Columns[8].Visible = false;
+
+
 
             //orderviewDataGridView.Columns[0].Visible = false;
             orderviewDataGridView.Columns[1].Visible = false;
@@ -192,6 +197,12 @@ namespace ShopKeep_POS
                 btnConfirm.Enabled = true;
             }
 
+        }
+
+        private void txtSrearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["PurOrder"].DefaultView;
+            dv.RowFilter = "PUB_NAME LIKE '%" + txtSearch.Text.Trim() + "%'";
         }
     }
 }

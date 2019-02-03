@@ -31,7 +31,7 @@ namespace ShopKeep_POS
         void FillData()
         {
             connection();
-            string query = "SELECT * FROM DEMAGE";
+            string query = "SELECT * FROM DAMAGE";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet Dset = new DataSet();
             adapter.Fill(Dset, "Damage");

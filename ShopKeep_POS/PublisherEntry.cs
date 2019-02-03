@@ -61,6 +61,7 @@ namespace ShopKeep_POS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Boolean isValid = true;
             name = txtName.Text ;
             phone = txtPhone.Text ;
             email = txtEmail.Text;
@@ -68,43 +69,64 @@ namespace ShopKeep_POS
             cty = txtCity.Text;
             state = cbState.Text;
 
-           // MessageBox.Show(name+" "+phone+" "+email+" "+add+" "+cty+" "+state);
-
-
-            if (Test.Equals(CommonConstant.DB_INSERT))
+            if (string.IsNullOrEmpty(name))
             {
-                connection();
-                getAddressID();
-                //MessageBox.Show(addressid);
-                strAddress = "INSERT INTO ADDRESS VALUES ('" + addressid + "',N'" + add + "',N'" + cty + "','" + state + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
-                SqlCommand addressCmd = new SqlCommand(strAddress, consql);
-                addressCmd.ExecuteNonQuery();
-
-                strPublisher = "INSERT INTO PUBLISHER VALUES ('" + publisherid + "','" + addressid + "',N'" + name + "','" + phone + "','" + email + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
-                SqlCommand staffDetailCmd = new SqlCommand(strPublisher, consql);
-                staffDetailCmd.ExecuteNonQuery();
-
-                consql.Close();
-
-                publisher.refreshform();
-                MessageBox.Show(MessageConstant.INSERT_MSG);
-                this.Close();
-
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_NAME);
+                isValid = false;
+            }else if(string.IsNullOrEmpty(phone)){
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_PHONE);
+                isValid = false;
+            }else if(string.IsNullOrEmpty(email)){
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_EMAIL);
+                isValid = false;
+            }else if(string.IsNullOrEmpty(add)){
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_EMAIL);
+                isValid = false;
+            }else if(!string.IsNullOrEmpty(cty)){
+                if (string.IsNullOrEmpty(state))
+                {
+                    MessageBox.Show(MessageConstant.PUBLISHER.PUB_STATE);
+                    isValid = false;
+                }
             }
-            else if (Test.Equals(CommonConstant.DB_UPDATE))
+
+
+            if (isValid)
             {
-                connection();
-                strAddress = "UPDATE ADDRESS SET ADDRESS='" + add + "',CITY=N'" + cty + "',STATE=N'" + state + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE ADD_ID ='" + addressid + "'";
-                SqlCommand addressCmd = new SqlCommand(strAddress, consql);
-                addressCmd.ExecuteNonQuery();
+                if (Test.Equals(CommonConstant.DB_INSERT))
+                {
+                    connection();
+                    getAddressID();
+                    strAddress = "INSERT INTO ADDRESS VALUES ('" + addressid + "',N'" + add + "',N'" + cty + "','" + state + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    SqlCommand addressCmd = new SqlCommand(strAddress, consql);
+                    addressCmd.ExecuteNonQuery();
 
-                strPublisher = "UPDATE PUBLISHER SET PUB_NAME=N'" + name + "',ADD_ID='" + addressid + "',PUB_EMAIL=N'" + email + "',PUB_TEL=N'" + phone + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE PUB_ID='" + publisherid + "'";
-                SqlCommand staffCmd = new SqlCommand(strPublisher, consql);
-                staffCmd.ExecuteNonQuery();
+                    strPublisher = "INSERT INTO PUBLISHER VALUES ('" + publisherid + "','" + addressid + "',N'" + name + "','" + phone + "','" + email + "','" + CommonConstant.UNARCHIVED + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    SqlCommand staffDetailCmd = new SqlCommand(strPublisher, consql);
+                    staffDetailCmd.ExecuteNonQuery();
 
-                publisher.refreshform();
-                MessageBox.Show(MessageConstant.UPDATE_MSG);
-                this.Close();
+                    consql.Close();
+
+                    publisher.refreshform();
+                    MessageBox.Show(MessageConstant.INSERT_MSG);
+                    this.Close();
+
+                }
+                else if (Test.Equals(CommonConstant.DB_UPDATE))
+                {
+                    connection();
+                    strAddress = "UPDATE ADDRESS SET ADDRESS='" + add + "',CITY=N'" + cty + "',STATE=N'" + state + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE ADD_ID ='" + addressid + "'";
+                    SqlCommand addressCmd = new SqlCommand(strAddress, consql);
+                    addressCmd.ExecuteNonQuery();
+
+                    strPublisher = "UPDATE PUBLISHER SET PUB_NAME=N'" + name + "',ADD_ID='" + addressid + "',PUB_EMAIL=N'" + email + "',PUB_PHONE=N'" + phone + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE PUB_ID='" + publisherid + "'";
+                    SqlCommand staffCmd = new SqlCommand(strPublisher, consql);
+                    staffCmd.ExecuteNonQuery();
+
+                    publisher.refreshform();
+                    MessageBox.Show(MessageConstant.UPDATE_MSG);
+                    this.Close();
+                }
             }
         }
     }

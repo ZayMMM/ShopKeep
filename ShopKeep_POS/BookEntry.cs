@@ -47,31 +47,51 @@ namespace ShopKeep_POS
             categoryId = cbCategory.SelectedValue.ToString();
             publisherId = cbPublisher.SelectedValue.ToString();
 
+            Boolean isValid = true;
 
-            if (Test.Equals(CommonConstant.DB_INSERT))
+            if (string.IsNullOrEmpty(Title))
             {
-
-
-                strbook = "INSERT INTO BOOK VALUES ('" + bookId + "','" + authorID + "','" + categoryId + "','" + publisherId + "','" + ISBN + "',N'" + Title + "',N'" + PurchasePrice + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
-                SqlCommand bookCmd = new SqlCommand(strbook, consql);
-                bookCmd.ExecuteNonQuery();
-
-                consql.Close();
-
-                book.refreshform();
-                MessageBox.Show(MessageConstant.INSERT_MSG);
-                this.Close();
-
+                MessageBox.Show(MessageConstant.BOOK.BOOK_TITLE);
+                isValid = false;
+            }else if(string.IsNullOrEmpty(PurchasePrice)){
+                MessageBox.Show(MessageConstant.BOOK.BOOK_PRICE);
+                isValid = false;
+            }else if(!string.IsNullOrEmpty(PurchasePrice)){
+                try
+                {
+                    int price = Int32.Parse(PurchasePrice);
+                }catch(FormatException fe){
+                    Console.WriteLine(fe.Message);
+                    isValid = false;
+                    MessageBox.Show(MessageConstant.BOOK.PRICE_FORMAT);
+                } 
             }
-            else if (Test.Equals(CommonConstant.DB_UPDATE))
-            {
-                strbook = "UPDATE BOOK SET AUT_ID='" + authorID + "',CAT_ID='" + categoryId + "',PUB_ID='" + publisherId + "',ISBN='" + ISBN + "',BK_TITLE = N'" + Title + "',BK_PURCHASE_PRICE=N'" + PurchasePrice + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE BOOK_ID ='" + bookId + "'";
-                SqlCommand bookCmd = new SqlCommand(strbook, consql);
-                bookCmd.ExecuteNonQuery();
 
-                book.refreshform();
-                MessageBox.Show(MessageConstant.UPDATE_MSG);
-                this.Close();
+            if (isValid)
+            {
+                if (Test.Equals(CommonConstant.DB_INSERT))
+                {
+                    strbook = "INSERT INTO BOOK VALUES ('" + bookId + "','" + authorID + "','" + categoryId + "','" + publisherId + "','" + ISBN + "',N'" + Title + "',N'" + PurchasePrice + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    SqlCommand bookCmd = new SqlCommand(strbook, consql);
+                    bookCmd.ExecuteNonQuery();
+
+                    consql.Close();
+
+                    book.refreshform();
+                    MessageBox.Show(MessageConstant.INSERT_MSG);
+                    this.Close();
+
+                }
+                else if (Test.Equals(CommonConstant.DB_UPDATE))
+                {
+                    strbook = "UPDATE BOOK SET AUT_ID='" + authorID + "',CAT_ID='" + categoryId + "',PUB_ID='" + publisherId + "',ISBN='" + ISBN + "',BK_TITLE = N'" + Title + "',BK_PURCHASE_PRICE=N'" + PurchasePrice + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE BOOK_ID ='" + bookId + "'";
+                    SqlCommand bookCmd = new SqlCommand(strbook, consql);
+                    bookCmd.ExecuteNonQuery();
+
+                    book.refreshform();
+                    MessageBox.Show(MessageConstant.UPDATE_MSG);
+                    this.Close();
+                }
             }
         }
 

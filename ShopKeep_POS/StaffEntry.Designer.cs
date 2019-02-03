@@ -106,21 +106,21 @@
             this.cbState.FormattingEnabled = true;
             this.cbState.ItemHeight = 16;
             this.cbState.Items.AddRange(new object[] {
-            "Ayeyarwady Region",
-            "Bago Region",
-            "Chin State",
-            "Kachin State",
-            "Kayah State",
-            "Kayin State",
-            "Magway Region",
-            "Mandalay Repion",
-            "Mon State",
-            "Rakhine State",
-            "Shan State",
-            "Sagaing Region",
+            "Ayeyarwady",
+            "Bago",
+            "Chin",
+            "Kachin",
+            "Kayah",
+            "Kayin",
+            "Magway",
+            "Mandalay",
+            "Mon",
+            "Rakhine",
+            "Shan",
+            "Sagaing",
             "Tanintharyi",
-            "Yangon Region",
-            "Naypyidaw Union Territory"});
+            "Yangon",
+            "NayPyiDaw"});
             this.cbState.Location = new System.Drawing.Point(531, 364);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(215, 24);

@@ -33,11 +33,12 @@ namespace ShopKeep_POS
             consql.Open();
         }
 
+        DataSet Dset;
         void FillData()
         {
-            string query = "SELECT PUB_ID,P.ADD_ID,PUB_NAME,PUB_TEL,PUB_EMAIL,ADDRESS,CITY,STATE FROM PUBLISHER P INNER JOIN ADDRESS A ON P.ADD_ID = A.ADD_ID";
+            string query = "SELECT PUB_ID,P.ADD_ID,PUB_NAME,PUB_PHONE,PUB_EMAIL,ADDRESS,CITY,STATE FROM PUBLISHER P INNER JOIN ADDRESS A ON P.ADD_ID = A.ADD_ID where PUB_ARCHIVED = '"+ CommonConstant.UNARCHIVED +"'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "Publish");
             dtpublisher = Dset.Tables["Publish"];
             publisherDataGridView.DataSource = dtpublisher;
@@ -60,6 +61,8 @@ namespace ShopKeep_POS
             publisherDataGridView.Columns[6].Width = 100;
             publisherDataGridView.Columns[7].Width = 100;
 
+            publisherDataGridView.Columns[0].Visible = false;
+            publisherDataGridView.Columns[1].Visible = false;
         }
 
         public void refreshform()
@@ -129,15 +132,14 @@ namespace ShopKeep_POS
             DataRow dr;
             int i;
             i = publisherDataGridView.CurrentRow.Index;
-            dr = dtpublisher.Rows[i];
-            publisherid = dr[0].ToString();
-            addressid = dr[1].ToString();
-            
-        }
+                dr = dtpublisher.Rows[i];
+                publisherid = dr[0].ToString();
+                addressid = dr[1].ToString();
+          }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string publisherDelSql = "Delete from PUBLISHER where PUB_ID ='" + publisherid + "'";
+            string publisherDelSql = "Update PUBLISHER set PUB_ARCHIVED = '"+ CommonConstant.ARCIVED +"' where PUB_ID ='" + publisherid + "'";
             SqlCommand publisherCmd = new SqlCommand(publisherDelSql, consql);
             publisherCmd.ExecuteNonQuery();
 
@@ -149,7 +151,10 @@ namespace ShopKeep_POS
             refreshform();
         }
 
-        
-
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["Publish"].DefaultView;
+            dv.RowFilter = "PUB_NAME LIKE '%" + txtSearch.Text.Trim() + "%'";
+        }
     }
 }

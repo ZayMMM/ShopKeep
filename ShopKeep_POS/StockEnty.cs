@@ -28,7 +28,7 @@ namespace ShopKeep_POS
         DataTable dtOrder,dtODT;
         public void connection()
         {
-            constr = "Data Source=DESKTOP-3ONRIPK;Initial Catalog=BOOK;Integrated Security=True";
+            constr = CommonConstant.DATA_SOURCE;
             consql = new SqlConnection(constr);
             consql.Open();
         }
@@ -91,19 +91,26 @@ namespace ShopKeep_POS
             SqlCommand stockCmd = new SqlCommand(strStock, consql);
             stockCmd.ExecuteNonQuery();
 
-
+            
             MessageBox.Show("FINISH");
-                
+            stocklist.refreshform();
+            this.Close();
+    
 
             
 
         }
 
-        private void StockEnty_Load(object sender, EventArgs e)
+        public void refreshform()
         {
             connection();
             FillData();
             FillODetail();
+        }
+
+        private void StockEnty_Load(object sender, EventArgs e)
+        {
+            refreshform();  
         }
 
         private void cbOrderid_SelectedIndexChanged(object sender, EventArgs e)

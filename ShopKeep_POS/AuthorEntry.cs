@@ -63,7 +63,7 @@ namespace ShopKeep_POS
             {
                 if (Test.Equals(CommonConstant.DB_INSERT))
                 {
-                    strAuthor = "Insert into AUTHOR Values('" + authorid + "',N'" + authorname + "',N'" + authorsubname + "','" + gen + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    strAuthor = "Insert into AUTHOR Values('" + authorid + "',N'" + authorname + "',N'" + authorsubname + "','" + gen + "','" + CommonConstant.UNARCHIVED + "','" + CommonConstant.CREATED_BY+ "','" + DateTime.Now + "','" + DateTime.Now + "')";
                     SqlCommand mycmd = new SqlCommand(strAuthor, consql);
                     mycmd.ExecuteNonQuery();
                     author.connection();

@@ -64,6 +64,8 @@ namespace ShopKeep_POS
         {
             
             id = txtStaffID.Text;
+            // check again Login ID
+            loginID = txtLginID.Text;
             name = txtStaffName.Text.Trim();
             dob = dtpDob.Text.Trim();
             phone = txtPhoneNum.Text.Trim();
@@ -125,7 +127,14 @@ namespace ShopKeep_POS
                 MessageBox.Show(MessageConstant.STAFF.GENDER);
                 isValid = false;
 
-            }else if (string.IsNullOrEmpty(cty))
+            }
+            else if (string.IsNullOrEmpty(dob))
+            {
+                MessageBox.Show(MessageConstant.STAFF.DOB);
+                isValid = false;
+
+            }
+            else if (string.IsNullOrEmpty(cty))
             {
                 MessageBox.Show(MessageConstant.STAFF.City);
                 isValid = false;
@@ -154,11 +163,11 @@ namespace ShopKeep_POS
                     SqlCommand addressCmd = new SqlCommand(strAddress, consql);
                     addressCmd.ExecuteNonQuery();
 
-                    strStaffDetail = "INSERT INTO STAFF_DETAIL VALUES ('" + loginID + "','" + password + "','" + confirmPwd + "','" + role + "','0','0','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    strStaffDetail = "INSERT INTO STAFF_LOGIN VALUES ('" + loginID + "','" + password + "','" + confirmPwd + "','" + role + "','0','0','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                     SqlCommand staffCmd = new SqlCommand(strStaffDetail, consql);
                     staffCmd.ExecuteNonQuery();
 
-                    strStaff = "INSERT INTO STAFF VALUES ('" + id + "','" + loginID + "','" + addID + "',N'" + name + "','" + gen + "','" + email + "','"+phone+"','"+nrc+"','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                    strStaff = "INSERT INTO STAFF VALUES ('" + id + "','" + loginID + "','" + addID + "',N'" + name + "','" + gen + "','" + dob + "','" + email + "','" + phone + "','" + nrc + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                     SqlCommand staffDetailCmd = new SqlCommand(strStaff, consql);
                     staffDetailCmd.ExecuteNonQuery();
 
@@ -173,11 +182,11 @@ namespace ShopKeep_POS
                     SqlCommand addressCmd = new SqlCommand(strAddress, consql);
                     addressCmd.ExecuteNonQuery();
 
-                    strStaffDetail = "UPDATE STAFF_DETAIL SET PASSWORD=N'" + password + "',CON_PASSWORD=N'" + confirmPwd + "',ROLE='" + role + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_LOGIN_ID='" + loginID + "'";
+                    strStaffDetail = "UPDATE STAFF_LOGIN SET PASSWORD=N'" + password + "',CON_PASSWORD=N'" + confirmPwd + "',ROLE='" + role + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_LOGIN_ID='" + loginID + "'";
                     SqlCommand staffDetailCmd = new SqlCommand(strStaffDetail, consql);
                     staffDetailCmd.ExecuteNonQuery();
 
-                    strStaff = "UPDATE STAFF SET STAFF_NAME=N'" + name + "',GENDER='" + gen + "',STAFF_MAIL=N'" + email + "',PHONE=N'" + phone + "',NRC=N'" + nrc + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_ID='" + id + "'";
+                    strStaff = "UPDATE STAFF SET STAFF_NAME=N'" + name + "',GENDER='" + gen + "',STAFF_DOB='" + dob + "',STAFF_MAIL=N'" + email + "',PHONE=N'" + phone + "',NRC=N'" + nrc + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STAFF_ID='" + id + "'";
                     SqlCommand staffCmd = new SqlCommand(strStaff, consql);
                     staffCmd.ExecuteNonQuery();
 
@@ -192,7 +201,7 @@ namespace ShopKeep_POS
 
         void getLoginID()
         {
-            string LoginSql = "select STAFF_LOGIN_ID from STAFF_DETAIL ORDER BY STAFF_LOGIN_ID";
+            string LoginSql = "select STAFF_LOGIN_ID from STAFF_LOGIN ORDER BY STAFF_LOGIN_ID";
             string LName;
             int LID;
             string format = "0000000";
@@ -216,7 +225,10 @@ namespace ShopKeep_POS
         {
             connection();
             getLoginID();
-            txtLginID.Text = loginID;
+            if (Test.Equals(CommonConstant.DB_INSERT))
+            {
+                txtLginID.Text = loginID;
+            }
         }           
 
        

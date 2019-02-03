@@ -31,6 +31,7 @@ namespace ShopKeep_POS
             consql.Open();
         }
 
+        DataSet Dset;
         void FillData()
         {
             String query = "SELECT BOOK_ID,B.AUT_ID,B.CAT_ID,B.PUB_ID,B.ISBN,B.BK_TITLE,A.AUT_NAME,C.CAT_NAME,P.PUB_NAME,B.BK_PURCHASE_PRICE" +
@@ -39,7 +40,7 @@ namespace ShopKeep_POS
             " INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID order by B.BOOK_ID";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "Book");
             dtBook = Dset.Tables["Book"];
             bookDataGridView.DataSource = dtBook;
@@ -64,12 +65,12 @@ namespace ShopKeep_POS
             bookDataGridView.Columns[1].Width = 100;
             bookDataGridView.Columns[2].Width = 100;
             bookDataGridView.Columns[3].Width = 100;
-            bookDataGridView.Columns[4].Width = 100;
-            bookDataGridView.Columns[5].Width = 100;
-            bookDataGridView.Columns[6].Width = 100;
-            bookDataGridView.Columns[7].Width = 100;
-            bookDataGridView.Columns[8].Width = 100;
-            bookDataGridView.Columns[9].Width = 100;
+            bookDataGridView.Columns[4].Width = 200;
+            bookDataGridView.Columns[5].Width = 150;
+            bookDataGridView.Columns[6].Width = 150;
+            bookDataGridView.Columns[7].Width = 150;
+            bookDataGridView.Columns[8].Width = 150;
+            bookDataGridView.Columns[9].Width = 150;
         }
 
 
@@ -157,6 +158,11 @@ namespace ShopKeep_POS
             refreshform();
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["Book"].DefaultView;
+            dv.RowFilter = "BK_TITLE LIKE '%" + txtSearch.Text.Trim() + "%'";
+        }
 
 
     }

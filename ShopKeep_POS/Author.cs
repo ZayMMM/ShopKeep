@@ -35,7 +35,7 @@ namespace ShopKeep_POS
         DataSet Dset;
         public void FillData()
         {
-            string query = "select AUT_ID,AUT_NAME,AUT_SUB_NAME,GENDER from AUTHOR";
+            string query = "select AUT_ID,AUT_NAME,AUT_SUB_NAME,GENDER from AUTHOR where AUT_ARCHIVED = '"+CommonConstant.UNARCHIVED+"'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             Dset = new DataSet();
             adapter.Fill(Dset, "Author");
@@ -51,6 +51,8 @@ namespace ShopKeep_POS
             authorDataGridView.Columns[1].Width = 150;
             authorDataGridView.Columns[2].Width = 150;
             authorDataGridView.Columns[3].Width = 100;
+
+            authorDataGridView.Columns[0].Visible = false;
 
         }
 
@@ -92,7 +94,7 @@ namespace ShopKeep_POS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string str = "Delete from AUTHOR where AUT_ID ='" + delete + "'";
+            string str = "Update AUTHOR set AUT_ARCHIVED ='" + CommonConstant.ARCIVED + "' where AUT_ID = '"+delete+"'";
             SqlCommand mycmd = new SqlCommand(str, consql);
             mycmd.ExecuteNonQuery();
             MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -105,12 +107,8 @@ namespace ShopKeep_POS
             DataRow dr;
             int i;
             i = authorDataGridView.CurrentRow.Index;
-            if (i == 0 || i == datatableAuthor.Rows.Count - 1)
-            {
                 dr = datatableAuthor.Rows[i];
                 delete = dr[0].ToString();
-            }
-
         }
 
         private void authorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

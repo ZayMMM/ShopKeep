@@ -39,7 +39,7 @@ namespace ShopKeep_POS
             }
 
            if(isValid){
-                String selectSql = "select STAFF_LOGIN_ID,PASSWORD from STAFF_DETAIL where STAFF_LOGIN_ID='" + userId + "' and PASSWORD='" + password + "'";
+                String selectSql = "select STAFF_LOGIN_ID,PASSWORD from STAFF_LOGIN where STAFF_LOGIN_ID='" + userId + "' and PASSWORD='" + password + "'";
                 SqlCommand cmd = new SqlCommand(selectSql, conSql);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -47,7 +47,13 @@ namespace ShopKeep_POS
 
                     if (dt.Rows.Count > 0)
                     {
-                    CommonConstant.CREATED_BY = txtUName.Text.Trim();
+                    String selectLoginName = "select STAFF_NAME from STAFF where STAFF_LOGIN_ID ='" + txtUName.Text.Trim() + "'";
+                    SqlCommand selectLoginNameCmd = new SqlCommand(selectLoginName, conSql);
+                    SqlDataAdapter selectLoginNameAdapter = new SqlDataAdapter(cmd);
+                    DataTable selectLoginNameDt = new DataTable();
+                    selectLoginNameAdapter.Fill(selectLoginNameDt);
+
+                    CommonConstant.CREATED_BY = selectLoginNameDt.Rows[0].ItemArray[0].ToString();
                     this.Hide();
                     Master master = new Master();
                     master.ShowDialog();

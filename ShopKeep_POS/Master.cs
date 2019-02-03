@@ -81,6 +81,48 @@ namespace ShopKeep_POS
         {
             Application.Exit();
         }
+
+        private void bestSellerChartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart();
+            chart.Show();
+        }
+
+        private void staffReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaffReportForm staffReport = new StaffReportForm();
+            staffReport.Show();
+        }
+
+        private void publisherReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PublisherReportForm pubReport = new PublisherReportForm();
+            pubReport.Show();
+        }
+
+        private void authorReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AuthorReportForm autReport = new AuthorReportForm();
+            autReport.Show();
+        }
+
+        private void categoryReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoryReportForm catReport = new CategoryReportForm();
+            catReport.Show();
+        }
+
+        private void stockReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockReportForm stockReport = new StockReportForm();
+            stockReport.Show();
+        }
+
+        private void bookReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookReportForm bookReport = new BookReportForm();
+            bookReport.Show();
+        }
    
 
     }

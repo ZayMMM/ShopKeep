@@ -33,6 +33,8 @@
             this.stockdataGridView = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stockdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,11 +52,14 @@
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // stockdataGridView
+            // 
             this.stockdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stockdataGridView.Location = new System.Drawing.Point(12, 120);
             this.stockdataGridView.Name = "stockdataGridView";
             this.stockdataGridView.Size = new System.Drawing.Size(960, 429);
             this.stockdataGridView.TabIndex = 2;
+            this.stockdataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stockdataGridView_CellContentDoubleClick);
+            this.stockdataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stockdataGridView_CellDoubleClick);
             // 
             // btnAdd
             // 
@@ -78,11 +83,30 @@
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(805, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "SearchWithTitle";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(737, 72);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(235, 20);
+            this.txtSearch.TabIndex = 115;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // StockList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.stockdataGridView);
@@ -94,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stockdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,5 +128,7 @@
         private System.Windows.Forms.DataGridView stockdataGridView;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

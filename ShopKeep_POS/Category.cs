@@ -31,11 +31,12 @@ namespace ShopKeep_POS
             consql.Open();
         }
 
+        DataSet Dset;
         void FillData()
         {
             string query = "SELECT CAT_ID,CAT_NAME FROM CATEGORY";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "Category");
             dtCategory = Dset.Tables["Category"];
             categoryDataGridView.DataSource = dtCategory;
@@ -84,12 +85,22 @@ namespace ShopKeep_POS
         private void btnAdd_Click(object sender, EventArgs e)
         {
             categoryName = txtcategory.Text;
-            getCategoryID();
-            sqlStr = "INSERT INTO CATEGORY VALUES('"+categoryId+"',N'"+categoryName+"','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
-            SqlCommand mycmd = new SqlCommand(sqlStr, consql);
-            mycmd.ExecuteNonQuery();
-            MessageBox.Show(MessageConstant.INSERT_MSG);
-            FillData();
+            Boolean isValid = true;
+            if (string.IsNullOrEmpty(categoryName))
+            {
+                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME);
+                isValid = false;
+            }
+            if (isValid)
+            {
+                getCategoryID();
+                sqlStr = "INSERT INTO CATEGORY VALUES('" + categoryId + "',N'" + categoryName + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                SqlCommand mycmd = new SqlCommand(sqlStr, consql);
+                mycmd.ExecuteNonQuery();
+                MessageBox.Show(MessageConstant.INSERT_MSG);
+                FillData();
+            }
+            
         }
 
         private void categoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,12 +128,30 @@ namespace ShopKeep_POS
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            sqlStr = "UPDATE CATEGORY SET CAT_NAME='" + txtcategory.Text + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE CAT_ID ='" + categoryId + "'";
-            SqlCommand mycmd = new SqlCommand(sqlStr, consql);
-            mycmd.ExecuteNonQuery();
-            MessageBox.Show(MessageConstant.UPDATE_MSG);
-            FillData();
-            txtcategory.Clear();
+            Boolean isValid = true;
+            categoryName = txtcategory.Text;
+            if (string.IsNullOrEmpty(categoryName))
+            {
+                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME);
+                isValid = false;
+            }
+
+            if (isValid)
+            {
+                sqlStr = "UPDATE CATEGORY SET CAT_NAME='" + txtcategory.Text + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE CAT_ID ='" + categoryId + "'";
+                SqlCommand mycmd = new SqlCommand(sqlStr, consql);
+                mycmd.ExecuteNonQuery();
+                MessageBox.Show(MessageConstant.UPDATE_MSG);
+                FillData();
+                txtcategory.Clear();
+            }
+            
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["Category"].DefaultView;
+            dv.RowFilter = "CAT_NAME LIKE '%" + txtSearch.Text.Trim() + "%'";
         }
 
         

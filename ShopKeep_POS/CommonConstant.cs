@@ -20,5 +20,11 @@ namespace ShopKeep_POS
         public static String DB_INSERT = "NEW";
 
         public static String DB_UPDATE = "UPDATE";
+
+        public static String ARCIVED = "ARCHIVED";
+
+        public static String UNARCHIVED = "UNARCHIVED";
+
+        public static String REPORT = "Q:\\PGDCA Project\\visual studio 2013\\Project\\ShopKeep_POS_V1.1\\ShopKeep_POS\\";
     }
 }

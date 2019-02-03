@@ -31,18 +31,34 @@ namespace ShopKeep_POS
             consql = new SqlConnection(constr);
             consql.Open();
         }
-
+        DataSet Dset;
         void FillData()
         {
-            String query = "SELECT STAFF_ID,S.STAFF_LOGIN_ID,S.ADD_ID,STAFF_NAME,PASSWORD,CON_PASSWORD,ROLE,GENDER,STAFF_MAIL,PHONE,NRC,ADDRESS,CITY,STATE" +
-                            " FROM STAFF S INNER JOIN STAFF_DETAIL T ON S.STAFF_LOGIN_ID=T.STAFF_LOGIN_ID" +
+            String query = "SELECT STAFF_ID,S.STAFF_LOGIN_ID,S.ADD_ID,STAFF_NAME,PASSWORD,CON_PASSWORD,ROLE,GENDER,STAFF_DOB,STAFF_MAIL,PHONE,NRC,ADDRESS,CITY,STATE" +
+                            " FROM STAFF S INNER JOIN STAFF_LOGIN T ON S.STAFF_LOGIN_ID=T.STAFF_LOGIN_ID" +
                             " INNER JOIN ADDRESS A ON S.ADD_ID=A.ADD_ID order by S.STAFF_ID";
 
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
+            Dset = new DataSet();
             adapter.Fill(Dset, "STAFF");
             dtStaff = Dset.Tables["STAFF"];
             Dgstaff.DataSource = dtStaff;
+
+            Dgstaff.Columns[0].HeaderText = "Staff ID";
+            Dgstaff.Columns[1].HeaderText = "Staff Login ID";
+            Dgstaff.Columns[2].HeaderText = "Address ID";
+            Dgstaff.Columns[3].HeaderText = "Staff Name";
+            Dgstaff.Columns[4].HeaderText = "Password";
+            Dgstaff.Columns[5].HeaderText = "Confirm Password";
+            Dgstaff.Columns[6].HeaderText = "Role";
+            Dgstaff.Columns[7].HeaderText = "Gender";
+            Dgstaff.Columns[8].HeaderText = "Date Of Birth";
+            Dgstaff.Columns[9].HeaderText = "Staff Mail";
+            Dgstaff.Columns[10].HeaderText = "Phone";
+            Dgstaff.Columns[11].HeaderText = "NRC No";
+            Dgstaff.Columns[12].HeaderText = "Address";
+            Dgstaff.Columns[13].HeaderText = "City";
+            Dgstaff.Columns[14].HeaderText = "Region";
 
 
             Dgstaff.Columns[0].Width = 100;
@@ -59,6 +75,11 @@ namespace ShopKeep_POS
             Dgstaff.Columns[11].Width = 100;
             Dgstaff.Columns[12].Width = 100;
             Dgstaff.Columns[13].Width = 100;
+            Dgstaff.Columns[14].Width = 100;
+
+            Dgstaff.Columns[0].Visible = false;
+            Dgstaff.Columns[1].Visible = false;
+            Dgstaff.Columns[2].Visible = false;
         }
 
         public void refreshform()
@@ -126,13 +147,13 @@ namespace ShopKeep_POS
             {
                 staffEntry.radioFemale.Checked = true;
             }
-
-            staffEntry.txtEmail.Text = dr[8].ToString();
-            staffEntry.txtPhoneNum.Text = dr[9].ToString();
-            staffEntry.txtNRC.Text = dr[10].ToString();
-            staffEntry.txtAddress.Text = dr[11].ToString();
-            staffEntry.txtCity.Text = dr[12].ToString();
-            staffEntry.cbState.Text = dr[13].ToString();
+            staffEntry.dtpDob.Value = DateTime.Parse(dr[8].ToString());
+            staffEntry.txtEmail.Text = dr[9].ToString();
+            staffEntry.txtPhoneNum.Text = dr[10].ToString();
+            staffEntry.txtNRC.Text = dr[11].ToString();
+            staffEntry.txtAddress.Text = dr[12].ToString();
+            staffEntry.txtCity.Text = dr[13].ToString();
+            staffEntry.cbState.Text = dr[14].ToString();
             
             
             staffEntry.Show();
@@ -144,10 +165,10 @@ namespace ShopKeep_POS
             DataRow dr;
             int i;
             i = Dgstaff.CurrentRow.Index;
-            dr = dtStaff.Rows[i];
-            selectedStaffID = dr[0].ToString();
-            selectedLoginID = dr[1].ToString();
-            selectedAddressID = dr[2].ToString();
+                dr = dtStaff.Rows[i];
+                selectedStaffID = dr[0].ToString();
+                selectedLoginID = dr[1].ToString();
+                selectedAddressID = dr[2].ToString();
         }
 
 
@@ -158,7 +179,7 @@ namespace ShopKeep_POS
             SqlCommand staffCmd = new SqlCommand(staffDelSql, consql);
             staffCmd.ExecuteNonQuery();
 
-            string loginDelSql = "Delete from STAFF_DETAIL where STAFF_LOGIN_ID ='" + selectedLoginID + "'";
+            string loginDelSql = "Delete from STAFF_LOGIN where STAFF_LOGIN_ID ='" + selectedLoginID + "'";
             SqlCommand loginCmd = new SqlCommand(loginDelSql, consql);
             loginCmd.ExecuteNonQuery();
 
@@ -168,6 +189,12 @@ namespace ShopKeep_POS
 
             MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             refreshform();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = Dset.Tables["STAFF"].DefaultView;
+            dv.RowFilter = "STAFF_NAME LIKE '%" + txtSearch.Text.Trim() + "%'";
         }
 
        
