@@ -78,7 +78,13 @@ namespace ShopKeep_POS
             public static String SALE_SUCCESS = "Finished Sale !";
         }
 
+        public static class DAMAGE
+        {
+            public static String BOOK_NAME = "Please Choose Book Name !";
+            public static String BOOK_QTY = "Please Add Book Qty !";
+            public static String BOOK_REMARK = "Please Add Remark !";
+            public static String CHECK_QTY = "Please Check Qty Format !";
+        }
 
-       
     }
 }

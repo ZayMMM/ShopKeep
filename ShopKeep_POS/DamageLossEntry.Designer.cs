@@ -38,6 +38,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtRemark = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQty.Location = new System.Drawing.Point(393, 151);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(121, 22);
+            this.txtQty.Size = new System.Drawing.Size(276, 22);
             this.txtQty.TabIndex = 3;
             // 
             // label4
@@ -67,15 +69,16 @@
             this.cbBookId.FormattingEnabled = true;
             this.cbBookId.Location = new System.Drawing.Point(393, 76);
             this.cbBookId.Name = "cbBookId";
-            this.cbBookId.Size = new System.Drawing.Size(121, 24);
+            this.cbBookId.Size = new System.Drawing.Size(276, 24);
             this.cbBookId.TabIndex = 1;
+            this.cbBookId.SelectedIndexChanged += new System.EventHandler(this.cbBookId_SelectedIndexChanged);
             // 
             // txtBookName
             // 
             this.txtBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookName.Location = new System.Drawing.Point(393, 113);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(121, 22);
+            this.txtBookName.Size = new System.Drawing.Size(276, 22);
             this.txtBookName.TabIndex = 2;
             // 
             // label3
@@ -103,9 +106,9 @@
             this.label10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(232, 9);
+            this.label10.Location = new System.Drawing.Point(266, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(306, 36);
+            this.label10.Size = new System.Drawing.Size(403, 36);
             this.label10.TabIndex = 93;
             this.label10.Text = "Damages Book Entry Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,11 +135,31 @@
             this.pictureBox1.TabIndex = 94;
             this.pictureBox1.TabStop = false;
             // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(393, 184);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(276, 103);
+            this.txtRemark.TabIndex = 95;
+            this.txtRemark.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(262, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "Remark";
+            // 
             // DamageLossEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 211);
+            this.ClientSize = new System.Drawing.Size(731, 299);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label10);
@@ -167,5 +190,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox txtRemark;
+        private System.Windows.Forms.Label label1;
     }
 }
