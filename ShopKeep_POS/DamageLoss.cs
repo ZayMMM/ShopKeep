@@ -31,7 +31,7 @@ namespace ShopKeep_POS
         void FillData()
         {
             connection();
-            string query = "SELECT * FROM DAMAGE";
+            string query = "SELECT D.DEMAGE_ID,D.STOCK_ID,B.BK_TITLE,D.DEMAGE_QTY,D.REASON,D.DEMAGE_CREATED_DATE,D.CREATED_BY FROM DAMAGE D INNER JOIN STOCK S ON S.STOCK_ID = D.STOCK_ID INNER JOIN BOOK B ON B.BOOK_ID = S.BOOK_ID";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet Dset = new DataSet();
             adapter.Fill(Dset, "Damage");
@@ -40,15 +40,22 @@ namespace ShopKeep_POS
 
             damageDataGridView.Columns[0].HeaderText = "DamageID";
             damageDataGridView.Columns[1].HeaderText = "StockID";
-            damageDataGridView.Columns[2].HeaderText = "QTY";            
-            damageDataGridView.Columns[3].HeaderText = "Created Date";
-            damageDataGridView.Columns[4].HeaderText = "Created By";            
+            damageDataGridView.Columns[2].HeaderText = "TITLE";
+            damageDataGridView.Columns[3].HeaderText = "QTY";            
+            damageDataGridView.Columns[4].HeaderText = "REASON";
+            damageDataGridView.Columns[5].HeaderText = "Created Date";
+            damageDataGridView.Columns[6].HeaderText = "Created By";
 
-            damageDataGridView.Columns[0].Width = 100;
-            damageDataGridView.Columns[1].Width = 100;
-            damageDataGridView.Columns[2].Width = 100;
-            damageDataGridView.Columns[3].Width = 100;
-            damageDataGridView.Columns[4].Width = 100;
+            damageDataGridView.Columns[0].Visible = false;
+            damageDataGridView.Columns[1].Visible = false;
+
+            damageDataGridView.Columns[0].Width = 150;
+            damageDataGridView.Columns[1].Width = 150;
+            damageDataGridView.Columns[2].Width = 300;
+            damageDataGridView.Columns[3].Width = 150;
+            damageDataGridView.Columns[4].Width = 150;
+            damageDataGridView.Columns[5].Width = 150;
+            damageDataGridView.Columns[6].Width = 150;
             
 
 

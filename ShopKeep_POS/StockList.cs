@@ -93,17 +93,17 @@ namespace ShopKeep_POS
 
         private void stockdataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = stockdataGridView.CurrentRow.Index;
-            dr = dtStock.Rows[i];
+            
             SetSellprice setsell = new SetSellprice(this);
-            String stockid = dr[0].ToString();
+            String stockid = stockdataGridView.Rows[i].Cells[0].Value.ToString();
             String format = "0000000";
             String bookid = "B" + (int.Parse(stockid.Substring(1, (stockid.Length - 1))).ToString(format));
             setsell.bookid = bookid;
-            setsell.txtBook.Text = dr[2].ToString();
-            setsell.txtSellprice.Text = dr[4].ToString();
+            setsell.txtBook.Text = stockdataGridView.Rows[i].Cells[2].Value.ToString();
+            setsell.txtSellprice.Text = stockdataGridView.Rows[i].Cells[4].Value.ToString();
 
             
 

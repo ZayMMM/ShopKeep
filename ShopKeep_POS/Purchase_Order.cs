@@ -233,7 +233,7 @@ namespace ShopKeep_POS
                 {
                     String format = "000000";
                     bookid = purorderList.Items[i].SubItems[0].Text;
-                    quantity = purorderList.Items[index].SubItems[3].Text;
+                    quantity = purorderList.Items[i].SubItems[3].Text;
                     connection();
 
                     if (test.Equals(CommonConstant.DB_INSERT))
@@ -242,7 +242,7 @@ namespace ShopKeep_POS
                         String strOrDT = "Insert into ORDER_DETAIL Values('" + "OT" + (i + 1).ToString(format) + "','" + orderid + "','" + bookid + "','" + quantity + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
-                        MessageBox.Show(CommonConstant.DB_INSERT);
+                       // MessageBox.Show(CommonConstant.DB_INSERT);
                     }
                     else if (test.Equals(CommonConstant.DB_UPDATE))
                     {
@@ -250,11 +250,12 @@ namespace ShopKeep_POS
                         String strOrDT = "UPDATE ORDER_DETAIL SET BOOK_ID='" + bookid + "',QUANTITY ='" + quantity + "',STATUS = '0',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_DT_ID='" + ODTid + "' AND ORDER_ID='" + orderid + "'";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
-                        MessageBox.Show(CommonConstant.DB_UPDATE);
+                      //  MessageBox.Show(CommonConstant.DB_UPDATE);
                     }
 
                     cleartxt();
                 }
+                MessageBox.Show(CommonConstant.DB_INSERT);
                 this.Close();
             }
             

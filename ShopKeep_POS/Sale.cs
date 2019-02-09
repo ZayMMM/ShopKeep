@@ -318,9 +318,8 @@ namespace ShopKeep_POS
                     stockCmd.ExecuteNonQuery();
 
                 }
-
-                MessageBox.Show(MessageConstant.SALE.SALE_SUCCESS);
-                this.Close();
+                VoucherForm voucher = new VoucherForm(this,saleID);
+                voucher.Show();
             } 
 
         }

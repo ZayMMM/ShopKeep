@@ -105,14 +105,12 @@ namespace ShopKeep_POS
 
         private void categoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
             int i;
 
             i = categoryDataGridView.CurrentRow.Index;
-            dr = dtCategory.Rows[i];
-            categoryId = dr[0].ToString();
-            categoryName = dr[1].ToString();
-            txtcategory.Text = dr[1].ToString();
+            categoryId = categoryDataGridView.Rows[i].Cells[0].Value.ToString();
+            categoryName = categoryDataGridView.Rows[i].Cells[1].Value.ToString();
+            txtcategory.Text = categoryDataGridView.Rows[i].Cells[1].Value.ToString();
 
         }
 

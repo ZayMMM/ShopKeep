@@ -22,6 +22,7 @@ namespace ShopKeep_POS
         String dataSource;
         String userId, password;
         Boolean isValid = true;
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -47,16 +48,28 @@ namespace ShopKeep_POS
 
                     if (dt.Rows.Count > 0)
                     {
-                    String selectLoginName = "select STAFF_NAME from STAFF where STAFF_LOGIN_ID ='" + txtUName.Text.Trim() + "'";
-                    SqlCommand selectLoginNameCmd = new SqlCommand(selectLoginName, conSql);
-                    SqlDataAdapter selectLoginNameAdapter = new SqlDataAdapter(cmd);
+                        String selectLoginName = "select S.STAFF_NAME,SL.ROLE from STAFF S INNER JOIN STAFF_LOGIN SL ON S.STAFF_LOGIN_ID = SL.STAFF_LOGIN_ID where S.STAFF_LOGIN_ID ='" + txtUName.Text.Trim() + "'";
+                    
+                    SqlDataAdapter selectLoginNameAdapter = new SqlDataAdapter(selectLoginName,conSql);
+                    DataSet dsLoginName = new DataSet();
+                    selectLoginNameAdapter.Fill(dsLoginName, "LoginName");
                     DataTable selectLoginNameDt = new DataTable();
-                    selectLoginNameAdapter.Fill(selectLoginNameDt);
+                    selectLoginNameDt = dsLoginName.Tables["LoginName"];
 
-                    CommonConstant.CREATED_BY = selectLoginNameDt.Rows[0].ItemArray[0].ToString();
+                    CommonConstant.CREATED_BY = selectLoginNameDt.Rows[0][0].ToString();
+                    String role = selectLoginNameDt.Rows[0][1].ToString();
+                        
                     this.Hide();
-                    Master master = new Master();
-                    master.ShowDialog();
+                    if (role.Equals("Manager"))
+                    {
+                        Master master = new Master();
+                        master.ShowDialog();
+                    }else
+                    {
+                        SubMaster master = new SubMaster();
+                        master.ShowDialog();
+                    }
+                    
                 
                 }
                 else

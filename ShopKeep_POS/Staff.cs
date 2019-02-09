@@ -60,6 +60,7 @@ namespace ShopKeep_POS
             Dgstaff.Columns[13].HeaderText = "City";
             Dgstaff.Columns[14].HeaderText = "Region";
 
+            Dgstaff.Columns[5].Visible = false;
 
             Dgstaff.Columns[0].Width = 100;
             Dgstaff.Columns[1].Width = 100;
@@ -125,35 +126,35 @@ namespace ShopKeep_POS
 
         private void Dgstaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+           
             int i;
             i = Dgstaff.CurrentRow.Index;
-            dr = dtStaff.Rows[i];
+            
             StaffEntry staffEntry = new StaffEntry(this,CommonConstant.DB_UPDATE);
-            staffEntry.txtStaffID.Text = dr[0].ToString();
-            staffEntry.txtLginID.Text = dr[1].ToString(); // Add
-            staffEntry.loginID = dr[1].ToString();
-            staffEntry.addID = dr[2].ToString();
-            staffEntry.txtStaffName.Text = dr[3].ToString();
-            staffEntry.txtPassword.Text = dr[4].ToString();
-            staffEntry.txtConfirmPassword.Text = dr[5].ToString();
-            staffEntry.cbRole.Text = dr[6].ToString();
+            staffEntry.txtStaffID.Text = Dgstaff.Rows[i].Cells[0].Value.ToString();
+            staffEntry.txtLginID.Text = Dgstaff.Rows[i].Cells[1].Value.ToString(); // Add
+            staffEntry.loginID = Dgstaff.Rows[i].Cells[1].Value.ToString();
+            staffEntry.addID = Dgstaff.Rows[i].Cells[2].Value.ToString();
+            staffEntry.txtStaffName.Text = Dgstaff.Rows[i].Cells[3].Value.ToString();
+            staffEntry.txtPassword.Text = Dgstaff.Rows[i].Cells[4].Value.ToString();
+            staffEntry.txtConfirmPassword.Text = Dgstaff.Rows[i].Cells[5].Value.ToString();
+            staffEntry.cbRole.Text = Dgstaff.Rows[i].Cells[6].Value.ToString();
 
-            if (dr[7].ToString() == CommonConstant.MALE)
+            if (Dgstaff.Rows[i].Cells[7].Value.ToString() == CommonConstant.MALE)
             {
                 staffEntry.radioMale.Checked = true;
             }
-            else if (dr[7].ToString() == CommonConstant.FEMALE)
+            else if (Dgstaff.Rows[i].Cells[7].Value.ToString() == CommonConstant.FEMALE)
             {
                 staffEntry.radioFemale.Checked = true;
             }
-            staffEntry.dtpDob.Value = DateTime.Parse(dr[8].ToString());
-            staffEntry.txtEmail.Text = dr[9].ToString();
-            staffEntry.txtPhoneNum.Text = dr[10].ToString();
-            staffEntry.txtNRC.Text = dr[11].ToString();
-            staffEntry.txtAddress.Text = dr[12].ToString();
-            staffEntry.txtCity.Text = dr[13].ToString();
-            staffEntry.cbState.Text = dr[14].ToString();
+            staffEntry.dtpDob.Value = DateTime.Parse(Dgstaff.Rows[i].Cells[8].Value.ToString());
+            staffEntry.txtEmail.Text = Dgstaff.Rows[i].Cells[9].Value.ToString();
+            staffEntry.txtPhoneNum.Text = Dgstaff.Rows[i].Cells[10].Value.ToString();
+            staffEntry.txtNRC.Text = Dgstaff.Rows[i].Cells[11].Value.ToString();
+            staffEntry.txtAddress.Text = Dgstaff.Rows[i].Cells[12].Value.ToString();
+            staffEntry.txtCity.Text = Dgstaff.Rows[i].Cells[13].Value.ToString();
+            staffEntry.cbState.Text = Dgstaff.Rows[i].Cells[14].Value.ToString();
             
             
             staffEntry.Show();
@@ -162,13 +163,13 @@ namespace ShopKeep_POS
 
         private void Dgstaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = Dgstaff.CurrentRow.Index;
-                dr = dtStaff.Rows[i];
-                selectedStaffID = dr[0].ToString();
-                selectedLoginID = dr[1].ToString();
-                selectedAddressID = dr[2].ToString();
+
+            selectedStaffID = Dgstaff.Rows[i].Cells[0].Value.ToString();
+            selectedLoginID = Dgstaff.Rows[i].Cells[1].Value.ToString();
+            selectedAddressID = Dgstaff.Rows[i].Cells[2].Value.ToString();
         }
 
 

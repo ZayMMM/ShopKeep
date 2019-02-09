@@ -57,7 +57,7 @@ namespace ShopKeep_POS
             publisherDataGridView.Columns[2].Width = 200;
             publisherDataGridView.Columns[3].Width = 100;
             publisherDataGridView.Columns[4].Width = 150;
-            publisherDataGridView.Columns[5].Width = 150;
+            publisherDataGridView.Columns[5].Width = 270;
             publisherDataGridView.Columns[6].Width = 100;
             publisherDataGridView.Columns[7].Width = 100;
 
@@ -110,31 +110,29 @@ namespace ShopKeep_POS
 
         private void publisherDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = publisherDataGridView.CurrentRow.Index;
-            dr = dtpublisher.Rows[i];
+            
             PublisherEntry publisherentry = new PublisherEntry(this, CommonConstant.DB_UPDATE);
-            publisherentry.publisherid = dr[0].ToString();
-            publisherentry.addressid = dr[1].ToString();
-            publisherentry.txtName.Text = dr[2].ToString();
-            publisherentry.txtPhone.Text = dr[3].ToString();
-            publisherentry.txtEmail.Text = dr[4].ToString();
-            publisherentry.txtAddress.Text = dr[5].ToString();
-            publisherentry.txtCity.Text = dr[6].ToString();
-            publisherentry.cbState.Text = dr[7].ToString();
+            publisherentry.publisherid = publisherDataGridView.Rows[i].Cells[0].Value.ToString();
+            publisherentry.addressid = publisherDataGridView.Rows[i].Cells[1].Value.ToString();
+            publisherentry.txtName.Text = publisherDataGridView.Rows[i].Cells[2].Value.ToString();
+            publisherentry.txtPhone.Text = publisherDataGridView.Rows[i].Cells[3].Value.ToString();
+            publisherentry.txtEmail.Text = publisherDataGridView.Rows[i].Cells[4].Value.ToString();
+            publisherentry.txtAddress.Text = publisherDataGridView.Rows[i].Cells[5].Value.ToString();
+            publisherentry.txtCity.Text = publisherDataGridView.Rows[i].Cells[6].Value.ToString();
+            publisherentry.cbState.Text = publisherDataGridView.Rows[i].Cells[7].Value.ToString();
             
             publisherentry.Show();
         }
 
         private void publisherDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
             int i;
             i = publisherDataGridView.CurrentRow.Index;
-                dr = dtpublisher.Rows[i];
-                publisherid = dr[0].ToString();
-                addressid = dr[1].ToString();
+                publisherid = publisherDataGridView.Rows[i].Cells[0].Value.ToString();
+                addressid = publisherDataGridView.Rows[i].Cells[1].Value.ToString();
           }
 
         private void btnDelete_Click(object sender, EventArgs e)

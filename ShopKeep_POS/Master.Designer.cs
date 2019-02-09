@@ -36,7 +36,6 @@
             this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.discountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.purchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.categoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,8 +72,7 @@
             this.publisherToolStripMenuItem,
             this.authorToolStripMenuItem,
             this.categoryToolStripMenuItem,
-            this.bookToolStripMenuItem,
-            this.discountToolStripMenuItem});
+            this.bookToolStripMenuItem});
             this.entryToolStripMenuItem.Name = "entryToolStripMenuItem";
             this.entryToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.entryToolStripMenuItem.Text = "Entry";
@@ -112,13 +111,6 @@
             this.bookToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.bookToolStripMenuItem.Text = "Book";
             this.bookToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
-            // 
-            // discountToolStripMenuItem
-            // 
-            this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
-            this.discountToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.discountToolStripMenuItem.Text = "Discount";
-            this.discountToolStripMenuItem.Click += new System.EventHandler(this.discountToolStripMenuItem_Click);
             // 
             // transactionToolStripMenuItem
             // 
@@ -168,7 +160,8 @@
             this.authorReportToolStripMenuItem,
             this.categoryReportToolStripMenuItem,
             this.stockReportToolStripMenuItem,
-            this.bookReportToolStripMenuItem});
+            this.bookReportToolStripMenuItem,
+            this.saleReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -222,6 +215,13 @@
             this.bookReportToolStripMenuItem.Text = "Book Report";
             this.bookReportToolStripMenuItem.Click += new System.EventHandler(this.bookReportToolStripMenuItem_Click);
             // 
+            // saleReportToolStripMenuItem
+            // 
+            this.saleReportToolStripMenuItem.Name = "saleReportToolStripMenuItem";
+            this.saleReportToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.saleReportToolStripMenuItem.Text = "Sale Report";
+            this.saleReportToolStripMenuItem.Click += new System.EventHandler(this.saleReportToolStripMenuItem_Click);
+            // 
             // Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,7 +252,6 @@
         private System.Windows.Forms.ToolStripMenuItem authorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem discountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem purchaseOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
@@ -266,6 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem categoryReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleReportToolStripMenuItem;
 
 
     }

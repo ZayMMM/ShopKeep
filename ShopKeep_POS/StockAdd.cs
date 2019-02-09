@@ -44,10 +44,12 @@ namespace ShopKeep_POS
             DataSet dsOrder = new DataSet();
             daOrder.Fill(dsOrder, "Order");
             dtOrder = dsOrder.Tables["Order"];
-            cbOrderid.DataSource = dtOrder;
-            cbOrderid.DisplayMember = dtOrder.Columns["ORDER_ID"].ToString();
-            cbOrderid.ValueMember = dtOrder.Columns["PUB_NAME"].ToString();
-            txtPubName.Text = cbOrderid.SelectedValue.ToString();
+            if(dtOrder.Rows.Count > 0){
+                cbOrderid.DataSource = dtOrder;
+                cbOrderid.DisplayMember = dtOrder.Columns["ORDER_ID"].ToString();
+                cbOrderid.ValueMember = dtOrder.Columns["PUB_NAME"].ToString();
+                txtPubName.Text = cbOrderid.SelectedValue.ToString();
+            }
 
            
         }
@@ -127,9 +129,9 @@ namespace ShopKeep_POS
                     setsell.txtBook.Text = bookname;
                     setsell.txtPurPrice.Text = price;
                     setsell.index = i;
-                    isValid = false;
+                    isValid = false; //
                     setsell.Show();
-                    
+
                 }
 
                 if (isValid)
@@ -149,24 +151,24 @@ namespace ShopKeep_POS
                     else
                     {
                         addStock = "INSERT INTO STOCK VALUES('" + stockid + "','" + bookid + "','" + quantity + "','" + selPrice + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
-                    }
-
-                    
+                    }                   
 
                     SqlCommand stockcmd = new SqlCommand(addStock, consql);
                     stockcmd.ExecuteNonQuery();
+
+                    MessageBox.Show("FINISH");
+                    stocklist.refreshform();
+
+                    String updateOrder = "UPDATE PURCHASE_ORDER SET ORDER_STATUS = 'Done' WHERE ORDER_ID = '" + cbOrderid.Text + "'";
+                    SqlCommand upOrderstatus = new SqlCommand(updateOrder, consql);
+                    upOrderstatus.ExecuteNonQuery();
+                    this.Close();
                     
                 }
-            }
-            MessageBox.Show("FINISH");
-            stocklist.refreshform();
-            this.Close();
-            String updateOrder = "UPDATE PURCHASE_ORDER SET ORDER_STATUS = 'Done' WHERE ORDER_ID = '" + cbOrderid.Text + "'";
-            SqlCommand upOrderstatus = new SqlCommand(updateOrder, consql);
-            upOrderstatus.ExecuteNonQuery();
-                
+            }        
 
         }
+
     }
 
 }

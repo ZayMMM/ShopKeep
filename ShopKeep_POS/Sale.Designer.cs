@@ -37,12 +37,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTotAmt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSale = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbBookid = new System.Windows.Forms.ComboBox();
             this.SaleListView = new System.Windows.Forms.ListView();
@@ -135,36 +132,12 @@
             this.label10.Text = "Sale Information Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(371, 136);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(79, 30);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnClear.Location = new System.Drawing.Point(616, 136);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(79, 30);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(255, 136);
+            this.btnDelete.Location = new System.Drawing.Point(644, 138);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 30);
             this.btnDelete.TabIndex = 7;
@@ -177,9 +150,9 @@
             this.btnSale.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSale.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnSale.Location = new System.Drawing.Point(494, 136);
+            this.btnSale.Location = new System.Drawing.Point(745, 138);
             this.btnSale.Name = "btnSale";
-            this.btnSale.Size = new System.Drawing.Size(79, 30);
+            this.btnSale.Size = new System.Drawing.Size(89, 30);
             this.btnSale.TabIndex = 9;
             this.btnSale.Text = "Sale";
             this.btnSale.UseVisualStyleBackColor = false;
@@ -190,25 +163,13 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAdd.Location = new System.Drawing.Point(146, 136);
+            this.btnAdd.Location = new System.Drawing.Point(539, 138);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(79, 30);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheck.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnCheck.Location = new System.Drawing.Point(740, 136);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(79, 30);
-            this.btnCheck.TabIndex = 11;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -250,30 +211,32 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "BookID";
+            this.columnHeader1.Width = 90;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Title";
-            this.columnHeader2.Width = 111;
+            this.columnHeader2.Width = 268;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Price";
-            this.columnHeader3.Width = 134;
+            this.columnHeader3.Width = 158;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "DiscountPrice";
-            this.columnHeader4.Width = 124;
+            this.columnHeader4.Width = 166;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Quantity";
-            this.columnHeader5.Width = 150;
+            this.columnHeader5.Width = 104;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Amount";
+            this.columnHeader6.Width = 172;
             // 
             // txtDiscount
             // 
@@ -304,9 +267,6 @@
             this.Controls.Add(this.SaleListView);
             this.Controls.Add(this.cbBookid);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSale);
             this.Controls.Add(this.btnAdd);
@@ -338,12 +298,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTotAmt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSale;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbBookid;
         private System.Windows.Forms.ListView SaleListView;

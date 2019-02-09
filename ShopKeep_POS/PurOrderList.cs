@@ -108,16 +108,15 @@ namespace ShopKeep_POS
 
         private void orderviewDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = orderviewDataGridView.CurrentRow.Index;
-            dr = dtPurOrder.Rows[i];
-            if (dr[3].ToString() == "Progress")
+            if (orderviewDataGridView.Rows[i].Cells[3].Value.ToString() == "Progress")
             {
                 Purchase_Order purchaseorder = new Purchase_Order(this, CommonConstant.DB_UPDATE);
-
-                purchaseorder.cbPublisher.Text = dr[2].ToString();
-                String strODT = "SELECT OD.BOOK_ID,B.BK_TITLE,B.BK_PURCHASE_PRICE,OD.QUANTITY FROM ORDER_DETAIL OD INNER JOIN BOOK B ON OD.BOOK_ID =B.BOOK_ID WHERE ORDER_ID = '" + dr[0].ToString() + "'";
+                String Orderid = orderviewDataGridView.Rows[i].Cells[0].Value.ToString();
+                purchaseorder.cbPublisher.Text = orderviewDataGridView.Rows[i].Cells[2].Value.ToString();
+                String strODT = "SELECT OD.BOOK_ID,B.BK_TITLE,B.BK_PURCHASE_PRICE,OD.QUANTITY FROM ORDER_DETAIL OD INNER JOIN BOOK B ON OD.BOOK_ID =B.BOOK_ID WHERE ORDER_ID = '" + Orderid + "'";
                 connection();
                 SqlDataAdapter ODTad = new SqlDataAdapter(strODT, consql);
                 DataSet ODTds = new DataSet();
@@ -138,11 +137,11 @@ namespace ShopKeep_POS
                     purchaseorder.purorderList.Items.Add(odtlistviewitem);
 
                 }
-                purchaseorder.pubid = dr[1].ToString();
+                purchaseorder.pubid = orderviewDataGridView.Rows[i].Cells[1].Value.ToString();
                 purchaseorder.txtTotalAmount.Text = totamt.ToString();
                 purchaseorder.bookname = ODTtable.Rows[0].ItemArray[1].ToString();
                 purchaseorder.txtQty.Text = ODTtable.Rows[0].ItemArray[3].ToString();
-                purchaseorder.txtOrderNo.Text = dr[0].ToString();
+                purchaseorder.txtOrderNo.Text = orderviewDataGridView.Rows[i].Cells[0].Value.ToString();
                 purchaseorder.Show();
             }
             else
@@ -182,12 +181,12 @@ namespace ShopKeep_POS
 
         private void orderviewDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = orderviewDataGridView.CurrentRow.Index;
-            dr = dtPurOrder.Rows[i];
-            status = dr[3].ToString();
-            orderID = dr[0].ToString();
+            
+            status = orderviewDataGridView.Rows[i].Cells[3].Value.ToString();
+            orderID = orderviewDataGridView.Rows[i].Cells[0].Value.ToString();
             if(status != "Progress")
             {
                 btnConfirm.Enabled = false;

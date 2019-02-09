@@ -20,6 +20,16 @@ namespace ShopKeep_POS
             InitializeComponent();
         }
 
+        String query, file;
+
+        public BookReportForm(String query, String file)
+        {
+            InitializeComponent();
+            this.query = query;
+            this.file = file;
+        }
+
+
         String constr;
         SqlConnection consql;
 
@@ -33,14 +43,14 @@ namespace ShopKeep_POS
         private void BookReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            String strBook = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON B.BOOK_ID = S.BOOK_ID";
+            String strBook = query;
             DsForReport dsBook = new DsForReport();
             SqlCommand BookCmd = new SqlCommand(strBook, consql);
             BookCmd.CommandType = CommandType.Text;
             SqlDataAdapter Dabook = new SqlDataAdapter(BookCmd);
             Dabook.Fill(dsBook, "BOOKREPORT");
             ReportDocument bookDocument = new ReportDocument();
-            bookDocument.Load(CommonConstant.REPORT + "BookReport.rpt");
+            bookDocument.Load(CommonConstant.REPORT + file);//"BookReport.rpt");
             bookDocument.SetDataSource(dsBook);
             BookcrystalReportViewer.ReportSource = bookDocument;
             BookcrystalReportViewer.Refresh();

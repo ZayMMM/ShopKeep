@@ -116,35 +116,33 @@ namespace ShopKeep_POS
 
         private void bookDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
+            
             int i;
             i = bookDataGridView.CurrentRow.Index;
-            dr = dtBook.Rows[i];
+            
             BookEntry bookEntry = new BookEntry(this, CommonConstant.DB_UPDATE);
-            bookEntry.bookId = dr[0].ToString();
-            bookEntry.authorID = dr[1].ToString();
-            bookEntry.categoryId = dr[2].ToString();
-            bookEntry.publisherId = dr[3].ToString();
-            bookEntry.txtISBN.Text = dr[4].ToString();
-            bookEntry.txtTitle.Text = dr[5].ToString();
-            bookEntry.autName = dr[6].ToString();            
-            bookEntry.catName = dr[7].ToString();
-            bookEntry.pubName = dr[8].ToString();
-            bookEntry.txtPurchaseprice.Text = dr[9].ToString();
+            bookEntry.bookId = bookDataGridView.Rows[i].Cells[0].Value.ToString();
+            bookEntry.authorID = bookDataGridView.Rows[i].Cells[1].Value.ToString();
+            bookEntry.categoryId = bookDataGridView.Rows[i].Cells[2].Value.ToString();
+            bookEntry.publisherId = bookDataGridView.Rows[i].Cells[3].Value.ToString();
+            bookEntry.txtISBN.Text = bookDataGridView.Rows[i].Cells[4].Value.ToString();
+            bookEntry.txtTitle.Text = bookDataGridView.Rows[i].Cells[5].Value.ToString();
+            bookEntry.autName = bookDataGridView.Rows[i].Cells[6].Value.ToString();
+            bookEntry.catName = bookDataGridView.Rows[i].Cells[7].Value.ToString();
+            bookEntry.pubName = bookDataGridView.Rows[i].Cells[8].Value.ToString();
+            bookEntry.txtPurchaseprice.Text = bookDataGridView.Rows[i].Cells[9].Value.ToString();
 
             bookEntry.Show();
         }
 
         private void bookDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
             int i;
             i = bookDataGridView.CurrentRow.Index;
-            dr = dtBook.Rows[i];
-            bookID = dr[0].ToString();
-            authorID = dr[1].ToString();
-            categoryID = dr[2].ToString();
-            publisherID = dr[3].ToString();
+            bookID = bookDataGridView.Rows[i].Cells[0].Value.ToString();
+            authorID = bookDataGridView.Rows[i].Cells[1].Value.ToString();
+            categoryID = bookDataGridView.Rows[i].Cells[2].Value.ToString();
+            publisherID = bookDataGridView.Rows[i].Cells[3].Value.ToString();
             
         }
 

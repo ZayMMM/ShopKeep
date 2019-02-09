@@ -35,7 +35,7 @@ namespace ShopKeep_POS
         DataSet Dset;
         public void FillData()
         {
-            string query = "select AUT_ID,AUT_NAME,AUT_SUB_NAME,GENDER from AUTHOR where AUT_ARCHIVED = '"+CommonConstant.UNARCHIVED+"'";
+            string query = "SELECT AUT_ID,AUT_NAME,AUT_SUB_NAME,GENDER FROM AUTHOR WHERE AUT_ARCHIVED = '"+CommonConstant.UNARCHIVED+"'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             Dset = new DataSet();
             adapter.Fill(Dset, "Author");
@@ -47,10 +47,10 @@ namespace ShopKeep_POS
             authorDataGridView.Columns[2].HeaderText = "Sub-Name";
             authorDataGridView.Columns[3].HeaderText = "Gender";
 
-            authorDataGridView.Columns[0].Width = 80;
+            authorDataGridView.Columns[0].Width = 100;
             authorDataGridView.Columns[1].Width = 150;
             authorDataGridView.Columns[2].Width = 150;
-            authorDataGridView.Columns[3].Width = 100;
+            authorDataGridView.Columns[3].Width = 150;
 
             authorDataGridView.Columns[0].Visible = false;
 
@@ -104,26 +104,22 @@ namespace ShopKeep_POS
 
         private void authorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
             int i;
             i = authorDataGridView.CurrentRow.Index;
-                dr = datatableAuthor.Rows[i];
-                delete = dr[0].ToString();
+                delete = authorDataGridView.Rows[i].Cells[0].Value.ToString();
         }
 
         private void authorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataRow dr;
             int i;
             i = authorDataGridView.CurrentRow.Index;
-            dr = datatableAuthor.Rows[i];
             AuthorEntry authorentry = new AuthorEntry(this, CommonConstant.DB_UPDATE);
             authorentry.Show();
-            authorentry.authorid = dr[0].ToString();
-            authorentry.txtName.Text = dr[1].ToString();
-            authorentry.txtSubName.Text = dr[2].ToString();
-            
-            if (dr[3].ToString() == "Male")
+            authorentry.authorid = authorDataGridView.Rows[i].Cells[0].Value.ToString();
+            authorentry.txtName.Text = authorDataGridView.Rows[i].Cells[1].Value.ToString();
+            authorentry.txtSubName.Text = authorDataGridView.Rows[i].Cells[2].Value.ToString();
+
+            if (authorDataGridView.Rows[i].Cells[3].Value.ToString() == "Male")
             {
                 authorentry.radioMale.Checked = true;
             }

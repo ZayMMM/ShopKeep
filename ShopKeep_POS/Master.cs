@@ -84,7 +84,7 @@ namespace ShopKeep_POS
 
         private void bestSellerChartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Chart chart = new Chart();
+            ChartReport chart = new ChartReport();
             chart.Show();
         }
 
@@ -120,8 +120,16 @@ namespace ShopKeep_POS
 
         private void bookReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookReportForm bookReport = new BookReportForm();
+            GeneralBookReport bookReport = new GeneralBookReport();
             bookReport.Show();
+        }
+
+        
+
+        private void saleReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaleReportForm sale = new SaleReportForm();
+            sale.Show();
         }
    
 

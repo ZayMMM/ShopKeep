@@ -116,6 +116,7 @@ namespace ShopKeep_POS
                 String updateStock = "UPDATE STOCK SET BOOK_QTY='" + updatedQty + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE STOCK_ID ='" + stockID + "'";
                 SqlCommand updateCmd = new SqlCommand(updateStock, conSql);
                 updateCmd.ExecuteNonQuery();
+                damageloss.refreshform();
 
                 this.Close();
             }
