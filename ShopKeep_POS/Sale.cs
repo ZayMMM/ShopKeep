@@ -96,7 +96,21 @@ namespace ShopKeep_POS
             {
                 isValid = false;
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Please Check Your Qty Format !");
+                MessageBox.Show("Please Check Your Quantity !");
+            }
+
+            if (isValid)
+            {
+                try
+                {
+                    int.Parse(txtDiscount.Text.Trim());
+                }
+                catch (FormatException ex)
+                {
+                    isValid = false;
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Please Check Your Discount !");
+                }
             }
             
             if (isValid)
@@ -180,7 +194,7 @@ namespace ShopKeep_POS
                             catch (FormatException ex)
                             {
                                 Console.WriteLine(ex.Message);
-                                MessageBox.Show("Please Check Your Qty Format !");
+                                //MessageBox.Show("Please Check Your Quantity !");
                             }
 
                             break;
@@ -234,6 +248,7 @@ namespace ShopKeep_POS
             SaleGenerateId();
             txtSlipNo.Text = saleID;
             FillBook();
+            txtSlipNo.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

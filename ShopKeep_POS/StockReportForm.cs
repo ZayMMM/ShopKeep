@@ -19,6 +19,14 @@ namespace ShopKeep_POS
         {
             InitializeComponent();
         }
+        String query, file;
+
+        public StockReportForm(String query,String file)
+        {
+            InitializeComponent();
+            this.query = query;
+            this.file = file;
+        }
 
         String constr;
         SqlConnection consql;
@@ -33,14 +41,14 @@ namespace ShopKeep_POS
         private void StockReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            String strStock = "SELECT B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,S.BOOK_QTY FROM STOCK S INNER JOIN BOOK B ON S.BOOK_ID = B.BOOK_ID INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID = B.CAT_ID INNER JOIN AUTHOR A ON B.AUT_ID = A.AUT_ID";
+            
             DsForReport dsStock = new DsForReport();
-            SqlCommand StockCmd = new SqlCommand(strStock, consql);
+            SqlCommand StockCmd = new SqlCommand(query, consql);
             StockCmd.CommandType = CommandType.Text;
             SqlDataAdapter DaStock = new SqlDataAdapter(StockCmd);
             DaStock.Fill(dsStock, "STOCKREPORT");
             ReportDocument StockDocument = new ReportDocument();
-            StockDocument.Load(CommonConstant.REPORT + "StockReport.rpt");
+            StockDocument.Load(CommonConstant.REPORT + file);
             StockDocument.SetDataSource(dsStock);
             StockcrystalReportViewer.ReportSource = StockDocument;
             StockcrystalReportViewer.Refresh();

@@ -44,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             this.txtPurchaseprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPurchaseprice.Location = new System.Drawing.Point(420, 275);
             this.txtPurchaseprice.Name = "txtPurchaseprice";
-            this.txtPurchaseprice.Size = new System.Drawing.Size(166, 22);
+            this.txtPurchaseprice.Size = new System.Drawing.Size(140, 22);
             this.txtPurchaseprice.TabIndex = 6;
             // 
             // txtTitle
@@ -201,11 +202,22 @@
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(567, 278);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 16);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Ks";
+            // 
             // BookEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 311);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label7);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
     }
 }

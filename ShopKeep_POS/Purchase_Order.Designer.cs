@@ -39,7 +39,6 @@
             this.dtpDuedate = new System.Windows.Forms.DateTimePicker();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -73,7 +72,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(233, 168);
+            this.label3.Location = new System.Drawing.Point(585, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 0;
@@ -125,7 +124,7 @@
             // 
             this.txtBookid.Enabled = false;
             this.txtBookid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookid.Location = new System.Drawing.Point(375, 165);
+            this.txtBookid.Location = new System.Drawing.Point(682, 123);
             this.txtBookid.Name = "txtBookid";
             this.txtBookid.Size = new System.Drawing.Size(173, 22);
             this.txtBookid.TabIndex = 4;
@@ -159,25 +158,12 @@
             this.label10.Text = "Purchase Order Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnClear.Location = new System.Drawing.Point(737, 159);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(79, 30);
-            this.btnClear.TabIndex = 12;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(780, 123);
+            this.btnDelete.Location = new System.Drawing.Point(767, 159);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 30);
             this.btnDelete.TabIndex = 10;
@@ -203,7 +189,7 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAdd.Location = new System.Drawing.Point(586, 123);
+            this.btnAdd.Location = new System.Drawing.Point(377, 159);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(79, 30);
             this.btnAdd.TabIndex = 8;
@@ -271,9 +257,9 @@
             this.columnHeader5,
             this.columnHeader7});
             this.purorderList.FullRowSelect = true;
-            this.purorderList.Location = new System.Drawing.Point(12, 205);
+            this.purorderList.Location = new System.Drawing.Point(0, 202);
             this.purorderList.Name = "purorderList";
-            this.purorderList.Size = new System.Drawing.Size(960, 305);
+            this.purorderList.Size = new System.Drawing.Size(984, 305);
             this.purorderList.TabIndex = 99;
             this.purorderList.UseCompatibleStateImageBehavior = false;
             this.purorderList.View = System.Windows.Forms.View.Details;
@@ -282,36 +268,34 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Book ID";
-            this.columnHeader2.Width = 117;
+            this.columnHeader2.Width = 172;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Book Name";
-            this.columnHeader3.Width = 107;
+            this.columnHeader3.Width = 149;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Price";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 95;
+            this.columnHeader4.Width = 153;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Quantity";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 119;
+            this.columnHeader5.Width = 186;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Amount";
-            this.columnHeader7.Width = 124;
+            this.columnHeader7.Width = 168;
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(685, 123);
+            this.btnUpdate.Location = new System.Drawing.Point(506, 159);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 30);
             this.btnUpdate.TabIndex = 9;
@@ -339,7 +323,6 @@
             this.Controls.Add(this.cbBookname);
             this.Controls.Add(this.txtOrderNo);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnAdd);
@@ -382,7 +365,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnAdd;

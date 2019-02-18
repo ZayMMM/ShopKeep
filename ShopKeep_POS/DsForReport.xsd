@@ -242,6 +242,56 @@ SELECT AUT_ID, AUT_NAME, AUT_SUB_NAME, GENDER, AUT_ARCHIVED, CREATED_BY, CREATED
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ORDERREPORT" msprop:Generator_TableClassName="ORDERREPORTDataTable" msprop:Generator_TableVarName="tableORDERREPORT" msprop:Generator_RowChangedName="ORDERREPORTRowChanged" msprop:Generator_TablePropName="ORDERREPORT" msprop:Generator_RowDeletingName="ORDERREPORTRowDeleting" msprop:Generator_RowChangingName="ORDERREPORTRowChanging" msprop:Generator_RowEvHandlerName="ORDERREPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="ORDERREPORTRowDeleted" msprop:Generator_RowClassName="ORDERREPORTRow" msprop:Generator_UserTableName="ORDERREPORT" msprop:Generator_RowEvArgName="ORDERREPORTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORDER_ID" msprop:Generator_ColumnVarNameInTable="columnORDER_ID" msprop:Generator_ColumnPropNameInRow="ORDER_ID" msprop:Generator_ColumnPropNameInTable="ORDER_IDColumn" msprop:Generator_UserColumnName="ORDER_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATED_BY" msprop:Generator_ColumnVarNameInTable="columnCREATED_BY" msprop:Generator_ColumnPropNameInRow="CREATED_BY" msprop:Generator_ColumnPropNameInTable="CREATED_BYColumn" msprop:Generator_UserColumnName="CREATED_BY" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDER_STATUS" msprop:Generator_ColumnVarNameInTable="columnORDER_STATUS" msprop:Generator_ColumnPropNameInRow="ORDER_STATUS" msprop:Generator_ColumnPropNameInTable="ORDER_STATUSColumn" msprop:Generator_UserColumnName="ORDER_STATUS" type="xs:string" minOccurs="0" />
+              <xs:element name="DUE_DATE" msprop:Generator_ColumnVarNameInTable="columnDUE_DATE" msprop:Generator_ColumnPropNameInRow="DUE_DATE" msprop:Generator_ColumnPropNameInTable="DUE_DATEColumn" msprop:Generator_UserColumnName="DUE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="PUB_NAME" msprop:Generator_ColumnVarNameInTable="columnPUB_NAME" msprop:Generator_ColumnPropNameInRow="PUB_NAME" msprop:Generator_ColumnPropNameInTable="PUB_NAMEColumn" msprop:Generator_UserColumnName="PUB_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OR_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnOR_AMOUNT" msprop:Generator_ColumnPropNameInRow="OR_AMOUNT" msprop:Generator_ColumnPropNameInTable="OR_AMOUNTColumn" msprop:Generator_UserColumnName="OR_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="BK_TITLE" msprop:Generator_ColumnVarNameInTable="columnBK_TITLE" msprop:Generator_ColumnPropNameInRow="BK_TITLE" msprop:Generator_ColumnPropNameInTable="BK_TITLEColumn" msprop:Generator_UserColumnName="BK_TITLE" type="xs:string" minOccurs="0" />
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:string" minOccurs="0" />
+              <xs:element name="OD_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnOD_AMOUNT" msprop:Generator_ColumnPropNameInRow="OD_AMOUNT" msprop:Generator_ColumnPropNameInTable="OD_AMOUNTColumn" msprop:Generator_UserColumnName="OD_AMOUNT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DAMAGEREPORT" msprop:Generator_TableClassName="DAMAGEREPORTDataTable" msprop:Generator_TableVarName="tableDAMAGEREPORT" msprop:Generator_TablePropName="DAMAGEREPORT" msprop:Generator_RowDeletingName="DAMAGEREPORTRowDeleting" msprop:Generator_RowChangingName="DAMAGEREPORTRowChanging" msprop:Generator_RowEvHandlerName="DAMAGEREPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="DAMAGEREPORTRowDeleted" msprop:Generator_UserTableName="DAMAGEREPORT" msprop:Generator_RowChangedName="DAMAGEREPORTRowChanged" msprop:Generator_RowEvArgName="DAMAGEREPORTRowChangeEvent" msprop:Generator_RowClassName="DAMAGEREPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BK_TITLE" msprop:Generator_ColumnVarNameInTable="columnBK_TITLE" msprop:Generator_ColumnPropNameInRow="BK_TITLE" msprop:Generator_ColumnPropNameInTable="BK_TITLEColumn" msprop:Generator_UserColumnName="BK_TITLE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEMAGE_QTY" msprop:Generator_ColumnVarNameInTable="columnDEMAGE_QTY" msprop:Generator_ColumnPropNameInRow="DEMAGE_QTY" msprop:Generator_ColumnPropNameInTable="DEMAGE_QTYColumn" msprop:Generator_UserColumnName="DEMAGE_QTY" type="xs:string" minOccurs="0" />
+              <xs:element name="REASON" msprop:Generator_ColumnVarNameInTable="columnREASON" msprop:Generator_ColumnPropNameInRow="REASON" msprop:Generator_ColumnPropNameInTable="REASONColumn" msprop:Generator_UserColumnName="REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATED_BY" msprop:Generator_ColumnVarNameInTable="columnCREATED_BY" msprop:Generator_ColumnPropNameInRow="CREATED_BY" msprop:Generator_ColumnPropNameInTable="CREATED_BYColumn" msprop:Generator_UserColumnName="CREATED_BY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BESTSELLREPORT" msprop:Generator_TableClassName="BESTSELLREPORTDataTable" msprop:Generator_TableVarName="tableBESTSELLREPORT" msprop:Generator_RowChangedName="BESTSELLREPORTRowChanged" msprop:Generator_TablePropName="BESTSELLREPORT" msprop:Generator_RowDeletingName="BESTSELLREPORTRowDeleting" msprop:Generator_RowChangingName="BESTSELLREPORTRowChanging" msprop:Generator_RowEvHandlerName="BESTSELLREPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="BESTSELLREPORTRowDeleted" msprop:Generator_RowClassName="BESTSELLREPORTRow" msprop:Generator_UserTableName="BESTSELLREPORT" msprop:Generator_RowEvArgName="BESTSELLREPORTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BK_TITLE" msprop:Generator_ColumnVarNameInTable="columnBK_TITLE" msprop:Generator_ColumnPropNameInRow="BK_TITLE" msprop:Generator_ColumnPropNameInTable="BK_TITLEColumn" msprop:Generator_UserColumnName="BK_TITLE" type="xs:string" minOccurs="0" />
+              <xs:element name="AUT_NAME" msprop:Generator_ColumnVarNameInTable="columnAUT_NAME" msprop:Generator_ColumnPropNameInRow="AUT_NAME" msprop:Generator_ColumnPropNameInTable="AUT_NAMEColumn" msprop:Generator_UserColumnName="AUT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CAT_NAME" msprop:Generator_ColumnVarNameInTable="columnCAT_NAME" msprop:Generator_ColumnPropNameInRow="CAT_NAME" msprop:Generator_ColumnPropNameInTable="CAT_NAMEColumn" msprop:Generator_UserColumnName="CAT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PUB_NAME" msprop:Generator_ColumnVarNameInTable="columnPUB_NAME" msprop:Generator_ColumnPropNameInRow="PUB_NAME" msprop:Generator_ColumnPropNameInTable="PUB_NAMEColumn" msprop:Generator_UserColumnName="PUB_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SALEREPORTSTAFF" msprop:Generator_TableClassName="SALEREPORTSTAFFDataTable" msprop:Generator_TableVarName="tableSALEREPORTSTAFF" msprop:Generator_TablePropName="SALEREPORTSTAFF" msprop:Generator_RowDeletingName="SALEREPORTSTAFFRowDeleting" msprop:Generator_RowChangingName="SALEREPORTSTAFFRowChanging" msprop:Generator_RowEvHandlerName="SALEREPORTSTAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="SALEREPORTSTAFFRowDeleted" msprop:Generator_UserTableName="SALEREPORTSTAFF" msprop:Generator_RowChangedName="SALEREPORTSTAFFRowChanged" msprop:Generator_RowEvArgName="SALEREPORTSTAFFRowChangeEvent" msprop:Generator_RowClassName="SALEREPORTSTAFFRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BK_TITLE" msprop:Generator_ColumnVarNameInTable="columnBK_TITLE" msprop:Generator_ColumnPropNameInRow="BK_TITLE" msprop:Generator_ColumnPropNameInTable="BK_TITLEColumn" msprop:Generator_UserColumnName="BK_TITLE" type="xs:string" minOccurs="0" />
+              <xs:element name="AUT_NAME" msprop:Generator_ColumnVarNameInTable="columnAUT_NAME" msprop:Generator_ColumnPropNameInRow="AUT_NAME" msprop:Generator_ColumnPropNameInTable="AUT_NAMEColumn" msprop:Generator_UserColumnName="AUT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CAT_NAME" msprop:Generator_ColumnVarNameInTable="columnCAT_NAME" msprop:Generator_ColumnPropNameInRow="CAT_NAME" msprop:Generator_ColumnPropNameInTable="CAT_NAMEColumn" msprop:Generator_UserColumnName="CAT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PUB_NAME" msprop:Generator_ColumnVarNameInTable="columnPUB_NAME" msprop:Generator_ColumnPropNameInRow="PUB_NAME" msprop:Generator_ColumnPropNameInTable="PUB_NAMEColumn" msprop:Generator_UserColumnName="PUB_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SALE_QTY" msprop:Generator_ColumnVarNameInTable="columnSALE_QTY" msprop:Generator_ColumnPropNameInRow="SALE_QTY" msprop:Generator_ColumnPropNameInTable="SALE_QTYColumn" msprop:Generator_UserColumnName="SALE_QTY" type="xs:string" minOccurs="0" />
+              <xs:element name="DISCOUNT_RATE" msprop:Generator_ColumnVarNameInTable="columnDISCOUNT_RATE" msprop:Generator_ColumnPropNameInRow="DISCOUNT_RATE" msprop:Generator_ColumnPropNameInTable="DISCOUNT_RATEColumn" msprop:Generator_UserColumnName="DISCOUNT_RATE" type="xs:string" minOccurs="0" />
+              <xs:element name="AMOUNT" msprop:Generator_ColumnVarNameInTable="columnAMOUNT" msprop:Generator_ColumnPropNameInRow="AMOUNT" msprop:Generator_ColumnPropNameInTable="AMOUNTColumn" msprop:Generator_UserColumnName="AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATED_BY" msprop:Generator_ColumnVarNameInTable="columnCREATED_BY" msprop:Generator_ColumnPropNameInRow="CREATED_BY" msprop:Generator_ColumnPropNameInTable="CREATED_BYColumn" msprop:Generator_UserColumnName="CREATED_BY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

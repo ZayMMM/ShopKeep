@@ -72,7 +72,22 @@ namespace ShopKeep_POS
             String query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID";
             String file = "BookReport.rpt";
 
-            if(checkView.Checked)
+            if(checkView.Checked && ckbxdate.Checked)
+            {
+                switch (cbViewBy.Text)
+                {
+                    case "Publisher":
+                        query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID WHERE P.PUB_NAME = N'" + cbView.Text + "' AND B.CREATED_DATE BETWEEN '" + dtpStartDate.Text.Trim() + " 00:02:58 AM' AND '" + dtpEndDate.Text.Trim() + " 23:02:58 PM'";
+                        break;
+                    case "Category":
+                        query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID WHERE C.CAT_NAME = N'" + cbView.Text + "' AND B.CREATED_DATE BETWEEN '" + dtpStartDate.Text.Trim() + " 00:02:58 AM' AND '" + dtpEndDate.Text.Trim() + " 23:02:58 PM'";
+                        break;
+                    case "Author":
+                        query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID WHERE A.AUT_NAME = N'" + cbView.Text + "' AND B.CREATED_DATE BETWEEN '"+dtpStartDate.Text.Trim()+" 00:02:58 AM' AND '"+dtpEndDate.Text.Trim()+" 23:02:58 PM'";
+                        break;
+                }
+            }
+            else if(checkView.Checked)
             {
                 switch (cbViewBy.Text)
                 {
@@ -86,25 +101,39 @@ namespace ShopKeep_POS
                         query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID WHERE A.AUT_NAME = N'" + cbView.Text+ "'";;
                         break;
                 }
+            }else if(ckbxdate.Checked)
+            {
+                query = "SELECT B.ISBN,B.BK_TITLE,P.PUB_NAME,A.AUT_NAME,C.CAT_NAME,B.BK_PURCHASE_PRICE,S.SELL_PRICE FROM BOOK B INNER JOIN PUBLISHER P ON B.PUB_ID = P.PUB_ID INNER JOIN CATEGORY C ON C.CAT_ID= B.CAT_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN STOCK S ON S.BOOK_ID = B.BOOK_ID WHERE B.CREATED_DATE BETWEEN '" + dtpStartDate.Text.Trim() + " 00:01:58 AM' AND '" + dtpEndDate.Text.Trim() + " 23:02:58 PM'";
             }
 
 
             switch (cbViewBy.Text)
             {
                 case "Publisher":
-                    file = "PublisherOnly.rpt";
+                    file = "BookPublisherReport.rpt";
                     break;
                 case "Category":
-                    file = "CategoryOnly.rpt";
+                    file = "BookCategoryReport.rpt";
                     break;
                 case "Author":
-                    file = "AuthorOnly.rpt";
+                    file = "BookAuthorReport.rpt";
                     break;
             }
 
 
             BookReportForm bkreport = new BookReportForm(query, file);
             bkreport.Show();
+        }
+
+        private void GeneralBookReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbxdate_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpStartDate.Enabled = ckbxdate.Checked;
+            dtpEndDate.Enabled = ckbxdate.Checked;
         }
 
         

@@ -22,6 +22,14 @@ namespace ShopKeep_POS
 
         String constr;
         SqlConnection consql;
+        String query = "SELECT AUT_NAME,AUT_SUB_NAME,GENDER FROM AUTHOR";
+        String file = "AuthorReport.rpt";
+
+        public AuthorReportForm(String query)
+        {
+            InitializeComponent();
+            this.query = query;
+        }
 
         public void connection()
         {
@@ -33,14 +41,14 @@ namespace ShopKeep_POS
         private void AuthorReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            String strAuthor = "SELECT AUT_NAME,AUT_SUB_NAME,GENDER FROM AUTHOR";
+            
             DsForReport dsAuthor = new DsForReport();
-            SqlCommand AuthorCmd = new SqlCommand(strAuthor, consql);
+            SqlCommand AuthorCmd = new SqlCommand(query, consql);
             AuthorCmd.CommandType = CommandType.Text;
             SqlDataAdapter DaAuthor = new SqlDataAdapter(AuthorCmd);
             DaAuthor.Fill(dsAuthor, "AUTREPORT");
             ReportDocument AutohrDocument = new ReportDocument();
-            AutohrDocument.Load(CommonConstant.REPORT + "AuthorReport.rpt");
+            AutohrDocument.Load(CommonConstant.REPORT + file);
             AutohrDocument.SetDataSource(dsAuthor);
             AuthorcrystalReportViewer.ReportSource = AutohrDocument;
             AuthorcrystalReportViewer.Refresh();

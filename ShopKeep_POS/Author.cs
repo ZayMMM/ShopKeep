@@ -94,19 +94,34 @@ namespace ShopKeep_POS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string str = "Update AUTHOR set AUT_ARCHIVED ='" + CommonConstant.ARCIVED + "' where AUT_ID = '"+delete+"'";
-            SqlCommand mycmd = new SqlCommand(str, consql);
-            mycmd.ExecuteNonQuery();
-            MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            connection();
-            FillData();
+
+            Int32 selectedCellCount = authorDataGridView.GetCellCount(DataGridViewElementStates.Selected);
+            Int32 selectedRowCount = authorDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (!string.IsNullOrEmpty(delete))
+            {
+                DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Coniframtion Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+               if (result.Equals(DialogResult.OK))
+                 {
+                   string str = "Update AUTHOR set AUT_ARCHIVED ='" + CommonConstant.ARCIVED + "' where AUT_ID = '" + delete + "'";
+                   SqlCommand mycmd = new SqlCommand(str, consql);
+                   mycmd.ExecuteNonQuery();
+                   MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   connection();
+                   FillData();
+                 }
+            }
+            else
+            {
+                MessageBox.Show(MessageConstant.SELECT_ONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void authorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = authorDataGridView.CurrentRow.Index;
-                delete = authorDataGridView.Rows[i].Cells[0].Value.ToString();
+            delete = authorDataGridView.Rows[i].Cells[0].Value.ToString();
         }
 
         private void authorDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

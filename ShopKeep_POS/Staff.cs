@@ -176,20 +176,25 @@ namespace ShopKeep_POS
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            string staffDelSql = "Delete from STAFF where STAFF_ID ='" + selectedStaffID + "'";
-            SqlCommand staffCmd = new SqlCommand(staffDelSql, consql);
-            staffCmd.ExecuteNonQuery();
+            DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Confirmation Window", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-            string loginDelSql = "Delete from STAFF_LOGIN where STAFF_LOGIN_ID ='" + selectedLoginID + "'";
-            SqlCommand loginCmd = new SqlCommand(loginDelSql, consql);
-            loginCmd.ExecuteNonQuery();
+            if (result == DialogResult.OK)
+            {
+                string staffDelSql = "Delete from STAFF where STAFF_ID ='" + selectedStaffID + "'";
+                SqlCommand staffCmd = new SqlCommand(staffDelSql, consql);
+                staffCmd.ExecuteNonQuery();
 
-            string addressDelSql = "Delete from ADDRESS where ADD_ID ='" + selectedAddressID + "'";
-            SqlCommand addressCmd = new SqlCommand(addressDelSql, consql);
-            addressCmd.ExecuteNonQuery();
+                string loginDelSql = "Delete from STAFF_LOGIN where STAFF_LOGIN_ID ='" + selectedLoginID + "'";
+                SqlCommand loginCmd = new SqlCommand(loginDelSql, consql);
+                loginCmd.ExecuteNonQuery();
 
-            MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            refreshform();
+                string addressDelSql = "Delete from ADDRESS where ADD_ID ='" + selectedAddressID + "'";
+                SqlCommand addressCmd = new SqlCommand(addressDelSql, consql);
+                addressCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Finish Delete Record", "Information Window", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refreshform();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

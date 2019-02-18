@@ -156,7 +156,7 @@ namespace ShopKeep_POS
                     SqlCommand stockcmd = new SqlCommand(addStock, consql);
                     stockcmd.ExecuteNonQuery();
 
-                    MessageBox.Show("FINISH");
+                    MessageBox.Show(MessageConstant.INSERT_MSG);
                     stocklist.refreshform();
 
                     String updateOrder = "UPDATE PURCHASE_ORDER SET ORDER_STATUS = 'Done' WHERE ORDER_ID = '" + cbOrderid.Text + "'";

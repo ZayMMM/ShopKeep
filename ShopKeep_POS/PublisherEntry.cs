@@ -71,21 +71,48 @@ namespace ShopKeep_POS
 
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show(MessageConstant.PUBLISHER.PUB_NAME);
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_NAME, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
             }else if(string.IsNullOrEmpty(phone)){
-                MessageBox.Show(MessageConstant.PUBLISHER.PUB_PHONE);
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_PHONE, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
             }else if(string.IsNullOrEmpty(email)){
-                MessageBox.Show(MessageConstant.PUBLISHER.PUB_EMAIL);
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_EMAIL, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
             }else if(string.IsNullOrEmpty(add)){
-                MessageBox.Show(MessageConstant.PUBLISHER.PUB_EMAIL);
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_ADD, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
-            }else if(!string.IsNullOrEmpty(cty)){
+            }else if (string.IsNullOrEmpty(cty)){
+                MessageBox.Show(MessageConstant.PUBLISHER.PUB_CITY, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;
+            }else if (!string.IsNullOrEmpty(cty)){
                 if (string.IsNullOrEmpty(state))
                 {
-                    MessageBox.Show(MessageConstant.PUBLISHER.PUB_STATE);
+                    MessageBox.Show(MessageConstant.PUBLISHER.PUB_STATE, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    isValid = false;
+                }
+            }
+
+            if (isValid && !string.IsNullOrEmpty(phone))
+            {
+                try
+                {
+                    long temp = long.Parse(phone);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(MessageConstant.STAFF.CHECK_PHONE_NO, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    isValid = false;
+                }
+            }
+
+            if (isValid && !string.IsNullOrEmpty(email))
+            {
+                bool isMail = CommonFunction.IsEmail(email);
+                if (!isMail)
+                {
+                    MessageBox.Show(MessageConstant.STAFF.CHECK_EMAIL_ADDRESS, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     isValid = false;
                 }
             }
@@ -108,7 +135,7 @@ namespace ShopKeep_POS
                     consql.Close();
 
                     publisher.refreshform();
-                    MessageBox.Show(MessageConstant.INSERT_MSG);
+                    MessageBox.Show(MessageConstant.INSERT_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
 
                 }
@@ -124,7 +151,7 @@ namespace ShopKeep_POS
                     staffCmd.ExecuteNonQuery();
 
                     publisher.refreshform();
-                    MessageBox.Show(MessageConstant.UPDATE_MSG);
+                    MessageBox.Show(MessageConstant.UPDATE_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

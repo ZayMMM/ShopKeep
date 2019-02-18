@@ -36,6 +36,7 @@ namespace ShopKeep_POS
             if (rbProgress.Checked)
             {
                 Confirm = "Progress";
+
             }else if(rbSuccess.Checked)
             {
                 Confirm = "Success";
@@ -48,7 +49,7 @@ namespace ShopKeep_POS
             strConfirm = "UPDATE PURCHASE_ORDER SET ORDER_STATUS='" + Confirm + "' WHERE ORDER_ID ='" + orderID + "'";
             SqlCommand mycmd = new SqlCommand(strConfirm, consql);
             mycmd.ExecuteNonQuery();
-            MessageBox.Show(CommonConstant.DB_UPDATE);
+            MessageBox.Show(MessageConstant.SUCCESS_PROGRESS);
             purorlst.connection();
             purorlst.FillData();
             this.Close();

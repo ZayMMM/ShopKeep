@@ -58,11 +58,8 @@ namespace ShopKeep_POS
             }
         }
 
-
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
             id = txtStaffID.Text;
             // check again Login ID
             loginID = txtLginID.Text;
@@ -84,75 +81,107 @@ namespace ShopKeep_POS
             role = cbRole.Text.Trim();
 
             if(string.IsNullOrEmpty(role)){
-                MessageBox.Show(MessageConstant.STAFF.ROLE);
+                MessageBox.Show(MessageConstant.STAFF.ROLE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(password))
             {
-                MessageBox.Show(MessageConstant.STAFF.PASSWORD);
+                MessageBox.Show(MessageConstant.STAFF.PASSWORD, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(confirmPwd))
             {
-                MessageBox.Show(MessageConstant.STAFF.COMFIRM_PASSWORD);
+                MessageBox.Show(MessageConstant.STAFF.COMFIRM_PASSWORD, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (!password.Equals(confirmPwd))
             {
-                MessageBox.Show(MessageConstant.STAFF.NOT_MATCH_PASSWORD);
+                MessageBox.Show(MessageConstant.STAFF.NOT_MATCH_PASSWORD, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show(MessageConstant.STAFF.NAME);
+                MessageBox.Show(MessageConstant.STAFF.NAME, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(add))
             {
-                MessageBox.Show(MessageConstant.STAFF.ADDRESS);
+                MessageBox.Show(MessageConstant.STAFF.ADDRESS, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(phone))
             {
-                MessageBox.Show(MessageConstant.STAFF.PHONE);
+                MessageBox.Show(MessageConstant.STAFF.PHONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(nrc))
             {
-                MessageBox.Show(MessageConstant.STAFF.NRC);
+                MessageBox.Show(MessageConstant.STAFF.NRC, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(gen))
             {
-                MessageBox.Show(MessageConstant.STAFF.GENDER);
+                MessageBox.Show(MessageConstant.STAFF.GENDER, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }
             else if (string.IsNullOrEmpty(dob))
             {
-                MessageBox.Show(MessageConstant.STAFF.DOB);
+                MessageBox.Show(MessageConstant.STAFF.DOB, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }
             else if (string.IsNullOrEmpty(cty))
             {
-                MessageBox.Show(MessageConstant.STAFF.City);
+                MessageBox.Show(MessageConstant.STAFF.CITY, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(state))
             {
-                MessageBox.Show(MessageConstant.STAFF.STATE);
+                MessageBox.Show(MessageConstant.STAFF.STATE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
             }else if (string.IsNullOrEmpty(email))
             {
-                MessageBox.Show(MessageConstant.STAFF.EMAIL);
+                MessageBox.Show(MessageConstant.STAFF.EMAIL, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
 
-            }else
-            {
+            }else{
                 isValid = true;
             }
+
+            if(isValid && !string.IsNullOrWhiteSpace(password)){
+                bool validPwd = CommonFunction.ValidPassword(password);
+                if(!validPwd){
+                    MessageBox.Show(MessageConstant.STAFF.PASSWORD_PATTERN_MSG, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    isValid = false;
+                }
+            }
+
+            if (isValid && !string.IsNullOrEmpty(phone))
+            {
+                try
+                {
+                    long temp = long.Parse(phone);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(MessageConstant.STAFF.CHECK_PHONE_NO, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    isValid = false;
+                }
+            }
+
+            if(isValid && !string.IsNullOrEmpty(email)){
+                bool isMail = CommonFunction.IsEmail(email);
+                if (!isMail)
+                {
+                    MessageBox.Show(MessageConstant.STAFF.CHECK_EMAIL_ADDRESS, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    isValid = false;
+                }
+            }
+
+            
 
             if (isValid)
             {
@@ -174,7 +203,7 @@ namespace ShopKeep_POS
                     consql.Close();
 
                     staff.refreshform();
-                    MessageBox.Show(MessageConstant.INSERT_MSG);
+                    MessageBox.Show(MessageConstant.INSERT_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
 
                 }else if(Test.Equals(CommonConstant.DB_UPDATE)){
@@ -191,7 +220,7 @@ namespace ShopKeep_POS
                     staffCmd.ExecuteNonQuery();
 
                     staff.refreshform();
-                    MessageBox.Show(MessageConstant.UPDATE_MSG);
+                    MessageBox.Show(MessageConstant.UPDATE_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }           

@@ -31,11 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DamageLoss));
             this.damageDataGridView = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.damageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,18 +60,6 @@
             this.label10.Text = "Damage Loss Information Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(367, 63);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(79, 30);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -95,34 +82,32 @@
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // txtSearch
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Location = new System.Drawing.Point(893, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 30);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtSearch.Location = new System.Drawing.Point(740, 69);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(224, 20);
+            this.txtSearch.TabIndex = 85;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(653, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 20);
-            this.textBox1.TabIndex = 85;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(793, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 16);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "SearchByBookName";
             // 
             // DamageLoss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.damageDataGridView);
@@ -141,10 +126,9 @@
 
         private System.Windows.Forms.DataGridView damageDataGridView;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

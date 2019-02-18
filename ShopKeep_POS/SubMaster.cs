@@ -47,11 +47,6 @@ namespace ShopKeep_POS
             book.Show();
         }
 
-        private void discountToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Discount discount = new Discount();
-            discount.Show();
-        }
 
         private void purchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -122,6 +117,11 @@ namespace ShopKeep_POS
         {
             GeneralBookReport bookReport = new GeneralBookReport();
             bookReport.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
    
 

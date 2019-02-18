@@ -91,15 +91,43 @@ namespace ShopKeep_POS
                 MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME);
                 isValid = false;
             }
+            else
+            {
+                foreach(char value in categoryName){
+                    bool digit = char.IsDigit(value);
+                    if (digit)
+                    {
+                        MessageBox.Show("Category Name should be only Character");
+                        isValid = false;
+                        break;
+                    }
+                }
+            }
+
+            String selectSql = "select CAT_NAME from CATEGORY where CAT_NAME='" + categoryName + "'";
+            SqlCommand cmd = new SqlCommand(selectSql, consql);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show(MessageConstant.CATEGORY.EXISTING_CATEGORY_NAME);
+                isValid = false;
+            }
+
             if (isValid)
             {
                 getCategoryID();
                 sqlStr = "INSERT INTO CATEGORY VALUES('" + categoryId + "',N'" + categoryName + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                 SqlCommand mycmd = new SqlCommand(sqlStr, consql);
                 mycmd.ExecuteNonQuery();
+                txtcategory.Clear();
                 MessageBox.Show(MessageConstant.INSERT_MSG);
                 FillData();
             }
+
+            
             
         }
 
@@ -111,26 +139,49 @@ namespace ShopKeep_POS
             categoryId = categoryDataGridView.Rows[i].Cells[0].Value.ToString();
             categoryName = categoryDataGridView.Rows[i].Cells[1].Value.ToString();
             txtcategory.Text = categoryDataGridView.Rows[i].Cells[1].Value.ToString();
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            sqlStr = "DELETE FROM CATEGORY WHERE CAT_ID='"+categoryId+"'";
-            SqlCommand mycmd = new SqlCommand(sqlStr, consql);
-            mycmd.ExecuteNonQuery();
-            MessageBox.Show(MessageConstant.DELETE_MSG);
-            FillData();
-            txtcategory.Clear();
+
+            Int32 selectedRowCount = categoryDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (selectedRowCount > 0)
+            {
+               DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Coniframtion Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+               if (result == DialogResult.OK)
+               {
+                   sqlStr = "DELETE FROM CATEGORY WHERE CAT_ID='" + categoryId + "'";
+                   SqlCommand mycmd = new SqlCommand(sqlStr, consql);
+                   mycmd.ExecuteNonQuery();
+                   MessageBox.Show(MessageConstant.DELETE_MSG);
+                   FillData();
+                   txtcategory.Clear();
+               }
+            }
+            else
+            {
+                MessageBox.Show(MessageConstant.SELECT_ONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Boolean isValid = true;
             categoryName = txtcategory.Text;
-            if (string.IsNullOrEmpty(categoryName))
+
+            if (categoryDataGridView.CurrentRow.Index > 0)
             {
-                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME);
+                isValid = true;
+            }else{
+                MessageBox.Show(MessageConstant.SELECT_ONE_UPDATE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;                
+            }
+
+            if (isValid && string.IsNullOrEmpty(categoryName))
+            {
+                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 isValid = false;
             }
 
@@ -139,7 +190,7 @@ namespace ShopKeep_POS
                 sqlStr = "UPDATE CATEGORY SET CAT_NAME='" + txtcategory.Text + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE CAT_ID ='" + categoryId + "'";
                 SqlCommand mycmd = new SqlCommand(sqlStr, consql);
                 mycmd.ExecuteNonQuery();
-                MessageBox.Show(MessageConstant.UPDATE_MSG);
+                MessageBox.Show(MessageConstant.UPDATE_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FillData();
                 txtcategory.Clear();
             }

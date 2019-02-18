@@ -43,6 +43,7 @@
             this.authorReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entryToolStripMenuItem,
             this.transactionToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -72,28 +74,28 @@
             // publisherToolStripMenuItem
             // 
             this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
-            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.publisherToolStripMenuItem.Text = "Publisher";
             this.publisherToolStripMenuItem.Click += new System.EventHandler(this.publisherToolStripMenuItem_Click);
             // 
             // authorToolStripMenuItem
             // 
             this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.authorToolStripMenuItem.Text = "Author";
             this.authorToolStripMenuItem.Click += new System.EventHandler(this.authorToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // bookToolStripMenuItem
             // 
             this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bookToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.bookToolStripMenuItem.Text = "Book";
             this.bookToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
             // 
@@ -109,14 +111,14 @@
             // saleToolStripMenuItem
             // 
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.saleToolStripMenuItem.Text = "Sale";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // damageLossToolStripMenuItem
             // 
             this.damageLossToolStripMenuItem.Name = "damageLossToolStripMenuItem";
-            this.damageLossToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.damageLossToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.damageLossToolStripMenuItem.Text = "DamageLoss";
             this.damageLossToolStripMenuItem.Click += new System.EventHandler(this.damageLossToolStripMenuItem_Click);
             // 
@@ -159,6 +161,13 @@
             this.bookReportToolStripMenuItem.Text = "Book Report";
             this.bookReportToolStripMenuItem.Click += new System.EventHandler(this.bookReportToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // SubMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +205,7 @@
         private System.Windows.Forms.ToolStripMenuItem authorReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoryReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 
 
     }

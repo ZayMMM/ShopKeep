@@ -83,7 +83,7 @@ namespace ShopKeep_POS
                     SqlCommand changePricecmd = new SqlCommand(changePrice, consql);
                     changePricecmd.ExecuteNonQuery();
                     stocklist.refreshform();
-                    MessageBox.Show("FINISH");
+                    MessageBox.Show(MessageConstant.UPDATE_MSG);
                     this.Close();
                 }
             }
@@ -91,6 +91,11 @@ namespace ShopKeep_POS
 
         }
 
+        private void SetSellprice_Load(object sender, EventArgs e)
+        {
+            txtBook.Enabled = false;
+            txtPurPrice.Enabled = false;
+        }
 
     }
 }

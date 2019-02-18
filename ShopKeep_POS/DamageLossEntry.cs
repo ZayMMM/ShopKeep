@@ -74,7 +74,7 @@ namespace ShopKeep_POS
                 MessageBox.Show(MessageConstant.DAMAGE.BOOK_REMARK);
             }
 
-            if(!string.IsNullOrEmpty(bookQty)){
+            if(!isNull && !string.IsNullOrEmpty(bookQty)){
                 try
                 {
                     int bQty = int.Parse(bookQty);

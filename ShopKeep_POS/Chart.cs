@@ -25,10 +25,7 @@ namespace ShopKeep_POS
             SqlConnection con = new SqlConnection(CommonConstant.DATA_SOURCE);
             DataSet ds = new DataSet();
             con.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("SELECT TOP "+ 9 +" B.BK_TITLE, SUM(SD.SALE_QTY) AS QUANTITY "+
-                                                       "FROM BOOK B INNER JOIN SALE_DETAIL SD ON SD.BOOK_ID=B.BOOK_ID "+
-                                                       "WHERE SD.CREATED_DATE BETWEEN '" + startDate + "' AND '" + endDate + "'" +
-                                                        " GROUP BY B.BOOK_ID, B.BK_TITLE ORDER BY QUANTITY DESC;", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("SELECT TOP 9 B.BK_TITLE,SUM(SD.SALE_QTY) AS QUANTITY FROM SALE_DETAIL SD INNER JOIN BOOK B ON B.BOOK_ID = SD.BOOK_ID WHERE SD.CREATED_DATE BETWEEN '"+startDate+"' AND '"+endDate+"' GROUP BY B.BK_TITLE ORDER BY QUANTITY DESC", con);
             adapt.Fill(ds);
             chart1.DataSource = ds;
             //set the member of the chart data source used to data bind to the X-values of the series  

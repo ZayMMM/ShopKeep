@@ -91,8 +91,6 @@ namespace ShopKeep_POS
             cbBookname.Text = purorderList.Items[index].SubItems[1].Text;
             Disamount = int.Parse(purorderList.Items[index].SubItems[2].Text) * int.Parse(purorderList.Items[index].SubItems[3].Text);
             txtQty.Text = purorderList.Items[index].SubItems[3].Text;
-
-
         }
 
         private void Purchase_Order_Load(object sender, EventArgs e)
@@ -114,6 +112,9 @@ namespace ShopKeep_POS
             SqlDataAdapter daBookprice = new SqlDataAdapter("select BK_PURCHASE_PRICE from BOOK where BOOK_ID = '"+txtBookid.Text+"'", consql);
             DataSet dsBookprice = new DataSet();
             Boolean isValid = true;
+            Boolean sameID = false;
+            String selectBookId;
+            int tempQty = 0;
 
             if (string.IsNullOrEmpty(txtQty.Text.Trim()))
             {
@@ -125,14 +126,48 @@ namespace ShopKeep_POS
             {
                 daBookprice.Fill(dsBookprice, "BookPrice");
                 bkprice = dsBookprice.Tables["BookPrice"].Rows[0][0].ToString();
-                Amount = (int.Parse(bkprice)) * (int.Parse(txtQty.Text));
-                ListViewItem lvOrder = new ListViewItem(txtBookid.Text);
-                lvOrder.SubItems.Add(cbBookname.Text.ToString());
-                lvOrder.SubItems.Add(bkprice);
-                lvOrder.SubItems.Add(txtQty.Text);
-                lvOrder.SubItems.Add(Amount.ToString());
-                purorderList.Items.Add(lvOrder);
-                txtTotalAmount.Text = ((int.Parse(txtTotalAmount.Text)) + Amount).ToString();
+
+                for (int i = 0; i < purorderList.Items.Count; i++)
+                {
+                    selectBookId = purorderList.Items[i].SubItems[0].Text;
+
+                    if (selectBookId.Equals(txtBookid.Text))
+                    {
+                        try
+                        {
+                            tempQty = (int.Parse(txtQty.Text)) + int.Parse(purorderList.Items[i].SubItems[3].Text);
+                            Amount = (int.Parse(bkprice)) * tempQty;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            MessageBox.Show("Please Check Your Qty Format !");
+                        }
+
+                        purorderList.Items[i].SubItems[3].Text = tempQty.ToString();
+                        purorderList.Items[i].SubItems[4].Text = Amount.ToString();
+                        sameID = true;
+                    }
+                }
+
+                if(!sameID){
+                    try
+                    {
+                        Amount = (int.Parse(bkprice)) * (int.Parse(txtQty.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        MessageBox.Show("Please Check Your Qty Format !");
+                    }
+                    ListViewItem lvOrder = new ListViewItem(txtBookid.Text);
+                    lvOrder.SubItems.Add(cbBookname.Text.ToString());
+                    lvOrder.SubItems.Add(bkprice);
+                    lvOrder.SubItems.Add(txtQty.Text);
+                    lvOrder.SubItems.Add(Amount.ToString());
+                    purorderList.Items.Add(lvOrder);
+                    txtTotalAmount.Text = ((int.Parse(txtTotalAmount.Text)) + Amount).ToString();
+                    }
 
                 cbPublisher.Enabled = false;
                 txtQty.Clear();
@@ -144,7 +179,17 @@ namespace ShopKeep_POS
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             totalamount = int.Parse(txtTotalAmount.Text);
-            Amount = (int.Parse(bkprice)) * (int.Parse(txtQty.Text));
+            try
+            {
+                if (string.IsNullOrEmpty(bkprice))
+                {
+                    bkprice = "error";
+                }
+                Amount = (int.Parse(bkprice)) * (int.Parse(txtQty.Text));
+            }catch(FormatException ex){
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Please Select One Record !");
+            }
             purorderList.Items[index].SubItems[0].Text = txtBookid.Text;
             purorderList.Items[index].SubItems[1].Text = cbBookname.Text;
             purorderList.Items[index].SubItems[3].Text = txtQty.Text;
@@ -173,9 +218,7 @@ namespace ShopKeep_POS
                     cbPublisher.Enabled = true;
                 }
                 
-            }
-            
-            
+            }          
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -191,26 +234,28 @@ namespace ShopKeep_POS
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            String orderid, pubid, orDate, dueDate, strorder, status;
+            String orderid, pubid, orDate, dueDate, strorder, status , or_amt;
             orderid = txtOrderNo.Text;
             pubid = cbPublisher.SelectedValue.ToString();
             status = "Progress";
             orDate = DateTime.Now.ToString();
             dueDate = dtpDuedate.Text;
+            or_amt = txtTotalAmount.Text;
             Boolean isValid = true;
 
             if (purorderList.Items.Count > 0 ) 
             {
+        
                 if (test.Equals(CommonConstant.DB_INSERT))
                 {
-                  strorder = "Insert into PURCHASE_ORDER Values('" + orderid + "','" + pubid + "','" + status + "','" + orDate + "','" + dueDate + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                  strorder = "Insert into PURCHASE_ORDER Values('" + orderid + "','" + pubid + "','" + status + "','" + orDate + "','" + dueDate + "','"+or_amt +"','"+ CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                   SqlCommand mycmd = new SqlCommand(strorder, consql);
                   mycmd.ExecuteNonQuery();
 
                 }
                 else if (test.Equals(CommonConstant.DB_UPDATE))
                 {
-                 strorder = "UPDATE PURCHASE_ORDER SET PUB_ID='" + pubid + "',ORDER_STATUS = '" + status + "',DUE_DATE = '" + dueDate + "',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_ID = '" + orderid + "'";
+                 strorder = "UPDATE PURCHASE_ORDER SET PUB_ID='" + pubid + "',ORDER_STATUS = '" + status + "',DUE_DATE = '" + dueDate +"',OR_AMOUNT ='"+or_amt+ "',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_ID = '" + orderid + "'";
                  SqlCommand mycmd = new SqlCommand(strorder, consql);
                  mycmd.ExecuteNonQuery();
               }
@@ -227,19 +272,20 @@ namespace ShopKeep_POS
                 purchaseorderlist.connection();
                 purchaseorderlist.FillData();
 
-                String bookid, quantity;
+                String bookid, quantity,od_amt;
 
                 for (int i = 0; i < purorderList.Items.Count; i++)
                 {
                     String format = "000000";
                     bookid = purorderList.Items[i].SubItems[0].Text;
                     quantity = purorderList.Items[i].SubItems[3].Text;
+                    od_amt = purorderList.Items[i].SubItems[4].Text;
                     connection();
 
                     if (test.Equals(CommonConstant.DB_INSERT))
                     {
 
-                        String strOrDT = "Insert into ORDER_DETAIL Values('" + "OT" + (i + 1).ToString(format) + "','" + orderid + "','" + bookid + "','" + quantity + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                        String strOrDT = "Insert into ORDER_DETAIL Values('" + "OT" + (i + 1).ToString(format) + "','" + orderid + "','" + bookid + "','" + quantity +"','"+od_amt+ "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
                        // MessageBox.Show(CommonConstant.DB_INSERT);
@@ -247,15 +293,15 @@ namespace ShopKeep_POS
                     else if (test.Equals(CommonConstant.DB_UPDATE))
                     {
                         String ODTid = "OT" + (i + 1).ToString(format);
-                        String strOrDT = "UPDATE ORDER_DETAIL SET BOOK_ID='" + bookid + "',QUANTITY ='" + quantity + "',STATUS = '0',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_DT_ID='" + ODTid + "' AND ORDER_ID='" + orderid + "'";
+                        String strOrDT = "UPDATE ORDER_DETAIL SET BOOK_ID='" + bookid + "',QUANTITY ='" + quantity + "',OD_AMOUNT = '"+od_amt+"',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_DT_ID='" + ODTid + "' AND ORDER_ID='" + orderid + "'";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
-                      //  MessageBox.Show(CommonConstant.DB_UPDATE);
+                        //  MessageBox.Show(CommonConstant.DB_UPDATE);
                     }
 
                     cleartxt();
                 }
-                MessageBox.Show(CommonConstant.DB_INSERT);
+                MessageBox.Show(MessageConstant.PURCAHSE.ORDER_FINISHED);
                 this.Close();
             }
             

@@ -15,13 +15,22 @@ namespace ShopKeep_POS
 {
     public partial class PublisherReportForm : Form
     {
+        String constr;
+        SqlConnection consql;
+        String query = "SELECT P.PUB_NAME,P.PUB_PHONE,P.PUB_EMAIL,A.ADDRESS,A.CITY,A.STATE FROM PUBLISHER P INNER JOIN ADDRESS A ON A.ADD_ID = P.ADD_ID";
+
         public PublisherReportForm()
         {
             InitializeComponent();
         }
 
-        String constr;
-        SqlConnection consql;
+        public PublisherReportForm(String query)
+        {
+            InitializeComponent();
+            this.query = query;
+        }
+
+       
 
         public void connection()
         {
@@ -33,9 +42,9 @@ namespace ShopKeep_POS
         private void PublisherReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            String strPublisher = "SELECT P.PUB_NAME,P.PUB_PHONE,P.PUB_EMAIL,A.ADDRESS,A.CITY,A.STATE FROM PUBLISHER P INNER JOIN ADDRESS A ON A.ADD_ID = P.ADD_ID";
+            
             DsForReport dsPublisher = new DsForReport();
-            SqlCommand PublisherCmd = new SqlCommand(strPublisher, consql);
+            SqlCommand PublisherCmd = new SqlCommand(query, consql);
             PublisherCmd.CommandType = CommandType.Text;
             SqlDataAdapter DaPublisher = new SqlDataAdapter(PublisherCmd);
             DaPublisher.Fill(dsPublisher, "PUBREPORT");
