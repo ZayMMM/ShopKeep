@@ -2,10 +2,6 @@
     
     
     public partial class DsForReport {
-        partial class SALEREPORTSTAFFDataTable
-        {
-        }
-    
         partial class SALEREPORTDataTable
         {
        }

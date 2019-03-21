@@ -176,7 +176,8 @@ namespace ShopKeep_POS
 
         private void btndel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Confirmation Window", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            MessageBoxButtons button = MessageBoxButtons.OKCancel;
+            DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM,"Confirmation Window",button,MessageBoxIcon.Warning);
 
             if (result == DialogResult.OK)
             {

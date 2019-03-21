@@ -60,28 +60,10 @@
     <Compile Include="AuthorEntry.Designer.cs">
       <DependentUpon>AuthorEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestSellerReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BestSellerReport.Designer.cs">
-      <DependentUpon>BestSellerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BestSellerReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BestSellerReportForm.Designer.cs">
-      <DependentUpon>BestSellerReportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BestSellerRpt.cs">
+    <Compile Include="AuthorOnly.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BestSellerRpt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BookAuthorReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookAuthorReport.rpt</DependentUpon>
+      <DependentUpon>AuthorOnly.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AuthorReport.cs">
@@ -120,10 +102,10 @@
     <Compile Include="BookReportForm.Designer.cs">
       <DependentUpon>BookReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookCategoryReport.cs">
+    <Compile Include="CategoryOnly.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookCategoryReport.rpt</DependentUpon>
+      <DependentUpon>CategoryOnly.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CategoryReport.cs">
@@ -152,50 +134,28 @@
     </Compile>
     <Compile Include="CommonConstant.cs" />
     <Compile Include="CommonFunction.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DamageLossEntry.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DamageLossEntry.Designer.cs">
       <DependentUpon>DamageLossEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="DamageLossReport.cs">
+    <Compile Include="Discount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DamageLossReport.Designer.cs">
-      <DependentUpon>DamageLossReport.cs</DependentUpon>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
     </Compile>
-    <Compile Include="DamageLossReportForm.cs">
+    <Compile Include="DiscountEntry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DamageLossReportForm.Designer.cs">
-      <DependentUpon>DamageLossReportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="dmgLosReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dmgLosReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DsForReport.cs">
-      <DependentUpon>DsForReport.xsd</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="DiscountEntry.Designer.cs">
+      <DependentUpon>DiscountEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="DsForReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DsForReport.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneralBookReport.cs">
       <SubType>Form</SubType>
@@ -203,83 +163,11 @@
     <Compile Include="GeneralBookReport.Designer.cs">
       <DependentUpon>GeneralBookReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeneralEntryReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneralEntryReport.Designer.cs">
-      <DependentUpon>GeneralEntryReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneralPurOrderRptForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneralPurOrderRptForm.Designer.cs">
-      <DependentUpon>GeneralPurOrderRptForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GeneralSaleReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeneralSaleReport.Designer.cs">
       <DependentUpon>GeneralSaleReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneralStockReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GeneralStockReport.Designer.cs">
-      <DependentUpon>GeneralStockReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurOrderReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PurOrderReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PurOrderReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurOrderReportForm.Designer.cs">
-      <DependentUpon>PurOrderReportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SaleAuthorReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SaleAuthorReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SaleCategoryReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SaleCategoryReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SalePublisherReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SalePublisherReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SaleStaffReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SaleStaffReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="StockAuthorReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StockAuthorReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="StockCategoryReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StockCategoryReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="StockPublisherReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StockPublisherReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SubMaster.cs">
       <SubType>Form</SubType>
@@ -299,10 +187,10 @@
     <Compile Include="PublisherEntry.Designer.cs">
       <DependentUpon>PublisherEntry.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookPublisherReport.cs">
+    <Compile Include="PublisherOnly.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookPublisherReport.rpt</DependentUpon>
+      <DependentUpon>PublisherOnly.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="PublisherReport.cs">
@@ -460,19 +348,9 @@
     <EmbeddedResource Include="AuthorEntry.resx">
       <DependentUpon>AuthorEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BestSellerReport.resx">
-      <DependentUpon>BestSellerReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BestSellerReportForm.resx">
-      <DependentUpon>BestSellerReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BestSellerRpt.rpt">
+    <EmbeddedResource Include="AuthorOnly.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BestSellerRpt.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BookAuthorReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookAuthorReport.cs</LastGenOutput>
+      <LastGenOutput>AuthorOnly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AuthorReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -494,9 +372,9 @@
     <EmbeddedResource Include="BookReportForm.resx">
       <DependentUpon>BookReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookCategoryReport.rpt">
+    <EmbeddedResource Include="CategoryOnly.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookCategoryReport.cs</LastGenOutput>
+      <LastGenOutput>CategoryOnly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -511,78 +389,20 @@
     <EmbeddedResource Include="ChartReport.resx">
       <DependentUpon>ChartReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="DamageLossEntry.resx">
       <DependentUpon>DamageLossEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DamageLossReport.resx">
-      <DependentUpon>DamageLossReport.cs</DependentUpon>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DamageLossReportForm.resx">
-      <DependentUpon>DamageLossReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="dmgLosReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>dmgLosReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeneralBookReport.resx">
-      <DependentUpon>GeneralBookReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeneralEntryReport.resx">
-      <DependentUpon>GeneralEntryReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GeneralPurOrderRptForm.resx">
-      <DependentUpon>GeneralPurOrderRptForm.cs</DependentUpon>
+    <EmbeddedResource Include="DiscountEntry.resx">
+      <DependentUpon>DiscountEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralSaleReport.resx">
       <DependentUpon>GeneralSaleReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneralStockReport.resx">
-      <DependentUpon>GeneralStockReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurOrderReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PurOrderReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurOrderReportForm.resx">
-      <DependentUpon>PurOrderReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaleAuthorReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SaleAuthorReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaleCategoryReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SaleCategoryReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalePublisherReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SalePublisherReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaleStaffReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SaleStaffReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="SetSellprice.resx">
       <DependentUpon>SetSellprice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StockAuthorReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>StockAuthorReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StockCategoryReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>StockCategoryReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StockPublisherReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>StockPublisherReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SubMaster.resx">
       <DependentUpon>SubMaster.cs</DependentUpon>
@@ -590,9 +410,9 @@
     <EmbeddedResource Include="PublisherEntry.resx">
       <DependentUpon>PublisherEntry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookPublisherReport.rpt">
+    <EmbeddedResource Include="PublisherOnly.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookPublisherReport.cs</LastGenOutput>
+      <LastGenOutput>PublisherOnly.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PublisherReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

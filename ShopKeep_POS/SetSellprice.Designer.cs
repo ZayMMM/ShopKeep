@@ -35,8 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPurPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSet
@@ -72,7 +70,7 @@
             this.txtSellprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSellprice.Location = new System.Drawing.Point(158, 100);
             this.txtSellprice.Name = "txtSellprice";
-            this.txtSellprice.Size = new System.Drawing.Size(105, 22);
+            this.txtSellprice.Size = new System.Drawing.Size(133, 22);
             this.txtSellprice.TabIndex = 5;
             this.txtSellprice.Text = "0";
             this.txtSellprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -92,7 +90,7 @@
             this.txtPurPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPurPrice.Location = new System.Drawing.Point(157, 63);
             this.txtPurPrice.Name = "txtPurPrice";
-            this.txtPurPrice.Size = new System.Drawing.Size(106, 22);
+            this.txtPurPrice.Size = new System.Drawing.Size(133, 22);
             this.txtPurPrice.TabIndex = 7;
             this.txtPurPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -106,33 +104,11 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Purchase Price";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(269, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 16);
-            this.label8.TabIndex = 77;
-            this.label8.Text = "Ks";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(267, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 16);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "Ks";
-            // 
             // SetSellprice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 179);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtPurPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSellprice);
@@ -160,8 +136,6 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtPurPrice;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
 
     }
 }

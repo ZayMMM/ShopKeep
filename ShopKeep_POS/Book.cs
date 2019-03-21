@@ -148,25 +148,12 @@ namespace ShopKeep_POS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = bookDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
-            {
-                DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Confirmation Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    string bookDelSql = "Delete from BOOK where BOOK_ID ='" + bookID + "'";
-                    SqlCommand staffCmd = new SqlCommand(bookDelSql, consql);
-                    staffCmd.ExecuteNonQuery();
+            string bookDelSql = "Delete from BOOK where BOOK_ID ='" + bookID + "'";
+            SqlCommand staffCmd = new SqlCommand(bookDelSql, consql);
+            staffCmd.ExecuteNonQuery();
 
-                    MessageBox.Show(MessageConstant.DELETE_MSG, "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    refreshform();
-                }
-            }
-            else
-            {
-                MessageBox.Show(MessageConstant.SELECT_ONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-           
+            MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

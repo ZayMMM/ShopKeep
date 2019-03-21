@@ -43,7 +43,7 @@
             this.authorReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.existToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.entryToolStripMenuItem,
             this.transactionToolStripMenuItem,
             this.reportsToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.existToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -161,12 +161,12 @@
             this.bookReportToolStripMenuItem.Text = "Book Report";
             this.bookReportToolStripMenuItem.Click += new System.EventHandler(this.bookReportToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
+            // existToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.existToolStripMenuItem.Name = "existToolStripMenuItem";
+            this.existToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.existToolStripMenuItem.Text = "Exist";
+            this.existToolStripMenuItem.Click += new System.EventHandler(this.existToolStripMenuItem_Click);
             // 
             // SubMaster
             // 
@@ -205,7 +205,7 @@
         private System.Windows.Forms.ToolStripMenuItem authorReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoryReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem existToolStripMenuItem;
 
 
     }

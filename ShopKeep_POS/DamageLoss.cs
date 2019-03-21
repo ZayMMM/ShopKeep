@@ -21,7 +21,6 @@ namespace ShopKeep_POS
         string constr;
         SqlConnection consql;
         DataTable datatabledamage;
-        DataSet Dset;
         void connection()
         {
             constr = CommonConstant.DATA_SOURCE ;
@@ -34,7 +33,7 @@ namespace ShopKeep_POS
             connection();
             string query = "SELECT D.DEMAGE_ID,D.STOCK_ID,B.BK_TITLE,D.DEMAGE_QTY,D.REASON,D.DEMAGE_CREATED_DATE,D.CREATED_BY FROM DAMAGE D INNER JOIN STOCK S ON S.STOCK_ID = D.STOCK_ID INNER JOIN BOOK B ON B.BOOK_ID = S.BOOK_ID";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            Dset = new DataSet();
+            DataSet Dset = new DataSet();
             adapter.Fill(Dset, "Damage");
             datatabledamage = Dset.Tables["Damage"];
             damageDataGridView.DataSource = datatabledamage;
@@ -83,19 +82,8 @@ namespace ShopKeep_POS
 
         private void damageDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = damageDataGridView.CurrentRow.Index;
             DamageLossEntry damagelossentry = new DamageLossEntry(this, CommonConstant.DB_UPDATE);
-            damagelossentry.txtBookName.Text = damageDataGridView.Rows[i].Cells[2].Value.ToString();
-            damagelossentry.txtQty.Text = damageDataGridView.Rows[i].Cells[3].Value.ToString();
-            damagelossentry.txtRemark.Text = damageDataGridView.Rows[i].Cells[4].Value.ToString();
             damagelossentry.Show();
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            DataView dv = Dset.Tables["Damage"].DefaultView;
-            dv.RowFilter = "BK_TITLE LIKE '%" + txtSearch.Text.Trim() + "%'";
         }
     }
 }

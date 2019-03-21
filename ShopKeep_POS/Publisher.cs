@@ -131,34 +131,22 @@ namespace ShopKeep_POS
         {
             int i;
             i = publisherDataGridView.CurrentRow.Index;
-            publisherid = publisherDataGridView.Rows[i].Cells[0].Value.ToString();
-            addressid = publisherDataGridView.Rows[i].Cells[1].Value.ToString();
+                publisherid = publisherDataGridView.Rows[i].Cells[0].Value.ToString();
+                addressid = publisherDataGridView.Rows[i].Cells[1].Value.ToString();
           }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Int32 selectedRowCount = publisherDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            string publisherDelSql = "Update PUBLISHER set PUB_ARCHIVED = '"+ CommonConstant.ARCIVED +"' where PUB_ID ='" + publisherid + "'";
+            SqlCommand publisherCmd = new SqlCommand(publisherDelSql, consql);
+            publisherCmd.ExecuteNonQuery();
 
-            if (selectedRowCount > 0)
-            {
-               DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Coniframtion Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-               if(result == DialogResult.OK){
-                  string publisherDelSql = "Update PUBLISHER set PUB_ARCHIVED = '"+ CommonConstant.ARCIVED +"' where PUB_ID ='" + publisherid + "'";
-                  SqlCommand publisherCmd = new SqlCommand(publisherDelSql, consql);
-                  publisherCmd.ExecuteNonQuery();
-               
-                  string addressDelSql = "Delete from ADDRESS where ADD_ID ='" + addressid + "'";
-                  SqlCommand addressCmd = new SqlCommand(addressDelSql, consql);
-                  addressCmd.ExecuteNonQuery();
-               
-                  MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                  refreshform();
-               }
-            }
-            else
-            {
-                MessageBox.Show(MessageConstant.SELECT_ONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            string addressDelSql = "Delete from ADDRESS where ADD_ID ='" + addressid + "'";
+            SqlCommand addressCmd = new SqlCommand(addressDelSql, consql);
+            addressCmd.ExecuteNonQuery();
+
+            MessageBox.Show("Finish delete this record", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

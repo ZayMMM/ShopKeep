@@ -15,7 +15,6 @@ namespace ShopKeep_POS
         public static String SAVE_CONFIRM = "Do You Want To Save !";
         public static String DELETE_CONFIRM = "Do You Want To Delete !";
         public static String SELECT_ONE = "Please Select One Row For Delete !";
-        public static String SELECT_ONE_UPDATE = "Please Select One Row For Update !";
 
         public static String SUCCESS_PROGRESS = "Finished Change Progress !";
         public static String WARNING = "Warning Window";
@@ -56,7 +55,6 @@ namespace ShopKeep_POS
             public static String PUB_NAME = "Please Enter Publisher Name !";
             public static String PUB_PHONE = "Please Enter Publisher Phone !";
             public static String PUB_EMAIL = "Please Enter Publisher Email !";
-            public static String PUB_ADD = "Please Enter Publisher Address !";
             public static String PUB_CITY = "Please Enter Publisher City !";
             public static String PUB_STATE = "Please Enter Publisher State !";
         }

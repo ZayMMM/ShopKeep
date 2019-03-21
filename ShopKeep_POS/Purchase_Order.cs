@@ -234,13 +234,12 @@ namespace ShopKeep_POS
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            String orderid, pubid, orDate, dueDate, strorder, status , or_amt;
+            String orderid, pubid, orDate, dueDate, strorder, status;
             orderid = txtOrderNo.Text;
             pubid = cbPublisher.SelectedValue.ToString();
             status = "Progress";
             orDate = DateTime.Now.ToString();
             dueDate = dtpDuedate.Text;
-            or_amt = txtTotalAmount.Text;
             Boolean isValid = true;
 
             if (purorderList.Items.Count > 0 ) 
@@ -248,14 +247,14 @@ namespace ShopKeep_POS
         
                 if (test.Equals(CommonConstant.DB_INSERT))
                 {
-                  strorder = "Insert into PURCHASE_ORDER Values('" + orderid + "','" + pubid + "','" + status + "','" + orDate + "','" + dueDate + "','"+or_amt +"','"+ CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                  strorder = "Insert into PURCHASE_ORDER Values('" + orderid + "','" + pubid + "','" + status + "','" + orDate + "','" + dueDate + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                   SqlCommand mycmd = new SqlCommand(strorder, consql);
                   mycmd.ExecuteNonQuery();
 
                 }
                 else if (test.Equals(CommonConstant.DB_UPDATE))
                 {
-                 strorder = "UPDATE PURCHASE_ORDER SET PUB_ID='" + pubid + "',ORDER_STATUS = '" + status + "',DUE_DATE = '" + dueDate +"',OR_AMOUNT ='"+or_amt+ "',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_ID = '" + orderid + "'";
+                 strorder = "UPDATE PURCHASE_ORDER SET PUB_ID='" + pubid + "',ORDER_STATUS = '" + status + "',DUE_DATE = '" + dueDate + "',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_ID = '" + orderid + "'";
                  SqlCommand mycmd = new SqlCommand(strorder, consql);
                  mycmd.ExecuteNonQuery();
               }
@@ -272,20 +271,19 @@ namespace ShopKeep_POS
                 purchaseorderlist.connection();
                 purchaseorderlist.FillData();
 
-                String bookid, quantity,od_amt;
+                String bookid, quantity;
 
                 for (int i = 0; i < purorderList.Items.Count; i++)
                 {
                     String format = "000000";
                     bookid = purorderList.Items[i].SubItems[0].Text;
                     quantity = purorderList.Items[i].SubItems[3].Text;
-                    od_amt = purorderList.Items[i].SubItems[4].Text;
                     connection();
 
                     if (test.Equals(CommonConstant.DB_INSERT))
                     {
 
-                        String strOrDT = "Insert into ORDER_DETAIL Values('" + "OT" + (i + 1).ToString(format) + "','" + orderid + "','" + bookid + "','" + quantity +"','"+od_amt+ "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
+                        String strOrDT = "Insert into ORDER_DETAIL Values('" + "OT" + (i + 1).ToString(format) + "','" + orderid + "','" + bookid + "','" + quantity + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
                        // MessageBox.Show(CommonConstant.DB_INSERT);
@@ -293,7 +291,7 @@ namespace ShopKeep_POS
                     else if (test.Equals(CommonConstant.DB_UPDATE))
                     {
                         String ODTid = "OT" + (i + 1).ToString(format);
-                        String strOrDT = "UPDATE ORDER_DETAIL SET BOOK_ID='" + bookid + "',QUANTITY ='" + quantity + "',OD_AMOUNT = '"+od_amt+"',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_DT_ID='" + ODTid + "' AND ORDER_ID='" + orderid + "'";
+                        String strOrDT = "UPDATE ORDER_DETAIL SET BOOK_ID='" + bookid + "',QUANTITY ='" + quantity + "',STATUS = 'Progress',LAST_UPDATED_DATE = '" + DateTime.Now + "' WHERE ORDER_DT_ID='" + ODTid + "' AND ORDER_ID='" + orderid + "'";
                         SqlCommand OrDTcmd = new SqlCommand(strOrDT, consql);
                         OrDTcmd.ExecuteNonQuery();
                         //  MessageBox.Show(CommonConstant.DB_UPDATE);

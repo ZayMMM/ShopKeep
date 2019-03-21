@@ -122,12 +122,9 @@ namespace ShopKeep_POS
                 sqlStr = "INSERT INTO CATEGORY VALUES('" + categoryId + "',N'" + categoryName + "','" + CommonConstant.CREATED_BY + "','" + DateTime.Now + "','" + DateTime.Now + "')";
                 SqlCommand mycmd = new SqlCommand(sqlStr, consql);
                 mycmd.ExecuteNonQuery();
-                txtcategory.Clear();
                 MessageBox.Show(MessageConstant.INSERT_MSG);
                 FillData();
             }
-
-            
             
         }
 
@@ -143,45 +140,21 @@ namespace ShopKeep_POS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            Int32 selectedRowCount = categoryDataGridView.Rows.GetRowCount(DataGridViewElementStates.Selected);
-
-            if (selectedRowCount > 0)
-            {
-               DialogResult result = MessageBox.Show(MessageConstant.DELETE_CONFIRM, "Coniframtion Box", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-               if (result == DialogResult.OK)
-               {
-                   sqlStr = "DELETE FROM CATEGORY WHERE CAT_ID='" + categoryId + "'";
-                   SqlCommand mycmd = new SqlCommand(sqlStr, consql);
-                   mycmd.ExecuteNonQuery();
-                   MessageBox.Show(MessageConstant.DELETE_MSG);
-                   FillData();
-                   txtcategory.Clear();
-               }
-            }
-            else
-            {
-                MessageBox.Show(MessageConstant.SELECT_ONE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
+            sqlStr = "DELETE FROM CATEGORY WHERE CAT_ID='"+categoryId+"'";
+            SqlCommand mycmd = new SqlCommand(sqlStr, consql);
+            mycmd.ExecuteNonQuery();
+            MessageBox.Show(MessageConstant.DELETE_MSG);
+            FillData();
+            txtcategory.Clear();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Boolean isValid = true;
             categoryName = txtcategory.Text;
-
-            if (categoryDataGridView.CurrentRow.Index > 0)
+            if (string.IsNullOrEmpty(categoryName))
             {
-                isValid = true;
-            }else{
-                MessageBox.Show(MessageConstant.SELECT_ONE_UPDATE, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                isValid = false;                
-            }
-
-            if (isValid && string.IsNullOrEmpty(categoryName))
-            {
-                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME, MessageConstant.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(MessageConstant.CATEGORY.CATEGORY_NAME);
                 isValid = false;
             }
 
@@ -190,7 +163,7 @@ namespace ShopKeep_POS
                 sqlStr = "UPDATE CATEGORY SET CAT_NAME='" + txtcategory.Text + "',LAST_UPDATED_DATE='" + DateTime.Now + "' WHERE CAT_ID ='" + categoryId + "'";
                 SqlCommand mycmd = new SqlCommand(sqlStr, consql);
                 mycmd.ExecuteNonQuery();
-                MessageBox.Show(MessageConstant.UPDATE_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(MessageConstant.UPDATE_MSG);
                 FillData();
                 txtcategory.Clear();
             }

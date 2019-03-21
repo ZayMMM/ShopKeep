@@ -15,18 +15,9 @@ namespace ShopKeep_POS
 {
     public partial class SaleReportForm : Form
     {
-        String query, file;
-
         public SaleReportForm()
         {
             InitializeComponent();
-        }
-
-        public SaleReportForm(String query, String file)
-        {
-            InitializeComponent();
-            this.query = query;
-            this.file = file;
         }
 
         String constr;
@@ -42,22 +33,14 @@ namespace ShopKeep_POS
         private void SaleReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            String strSale = query;
+            String strSale = "SELECT B.BK_TITLE,A.AUT_NAME,C.CAT_NAME,P.PUB_NAME,SD.DISCOUNT_RATE, SUM(SD.SALE_QTY) AS SALE_QTY,SUM(SD.AMOUNT) AS AMOUNT FROM BOOK B INNER JOIN SALE_DETAIL SD ON SD.BOOK_ID=B.BOOK_ID INNER JOIN AUTHOR A ON A.AUT_ID = B.AUT_ID INNER JOIN CATEGORY C ON C.CAT_ID = B.CAT_ID INNER JOIN PUBLISHER P ON P.PUB_ID = B.PUB_ID GROUP BY B.BOOK_ID, B.BK_TITLE,A.AUT_NAME,C.CAT_NAME,P.PUB_NAME,SD.DISCOUNT_RATE ORDER BY SD.DISCOUNT_RATE DESC";
             DsForReport dsSale = new DsForReport();
             SqlCommand SaleCmd = new SqlCommand(strSale, consql);
             SaleCmd.CommandType = CommandType.Text;
             SqlDataAdapter DaSale = new SqlDataAdapter(SaleCmd);
-            if (file.Equals("SaleStaffReport.rpt"))
-            {
-                DaSale.Fill(dsSale, "SALEREPORTSTAFF");
-            }
-            else
-            {
-                DaSale.Fill(dsSale, "SALEREPORT");
-            }
-            
+            DaSale.Fill(dsSale, "SALEREPORT");
             ReportDocument SaleDocument = new ReportDocument();
-            SaleDocument.Load(CommonConstant.REPORT + file);
+            SaleDocument.Load(CommonConstant.REPORT + "SaleReport.rpt");
             SaleDocument.SetDataSource(dsSale);
             SalecrystalReportViewer.ReportSource = SaleDocument;
             SalecrystalReportViewer.Refresh();

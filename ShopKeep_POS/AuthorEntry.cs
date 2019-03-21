@@ -68,7 +68,7 @@ namespace ShopKeep_POS
                     mycmd.ExecuteNonQuery();
                     author.connection();
                     author.FillData();
-                    MessageBox.Show(MessageConstant.INSERT_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MessageConstant.INSERT_MSG);
                     this.Close();
                 }
                 else if (Test.Equals(CommonConstant.DB_UPDATE))
@@ -78,7 +78,7 @@ namespace ShopKeep_POS
                     mycmd.ExecuteNonQuery();
                     author.connection();
                     author.FillData();
-                    MessageBox.Show(MessageConstant.UPDATE_MSG, MessageConstant.INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MessageConstant.UPDATE_MSG);
                     this.Close();
                 }
             }

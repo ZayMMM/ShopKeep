@@ -20,15 +20,8 @@ namespace ShopKeep_POS
             InitializeComponent();
         }
 
-        public CategoryReportForm(String query)
-        {
-            InitializeComponent();
-            this.query = query;
-        }
-
         String constr;
         SqlConnection consql;
-        String query = "SELECT CAT_NAME FROM CATEGORY";
 
         public void connection()
         {
@@ -40,9 +33,9 @@ namespace ShopKeep_POS
         private void CategoryReportForm_Load(object sender, EventArgs e)
         {
             connection();
-            
+            String strCategory = "SELECT CAT_NAME FROM CATEGORY";
             DsForReport dsCategory = new DsForReport();
-            SqlCommand CategoryCmd = new SqlCommand(query, consql);
+            SqlCommand CategoryCmd = new SqlCommand(strCategory, consql);
             CategoryCmd.CommandType = CommandType.Text;
             SqlDataAdapter DaCategory = new SqlDataAdapter(CategoryCmd);
             DaCategory.Fill(dsCategory, "CATREPORT");

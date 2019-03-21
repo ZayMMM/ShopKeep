@@ -181,16 +181,16 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbBookId;
-        public System.Windows.Forms.TextBox txtBookName;
+        private System.Windows.Forms.TextBox txtBookName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.RichTextBox txtRemark;
+        private System.Windows.Forms.RichTextBox txtRemark;
         private System.Windows.Forms.Label label1;
     }
 }

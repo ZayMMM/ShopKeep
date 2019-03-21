@@ -39,6 +39,7 @@
             this.dtpDuedate = new System.Windows.Forms.DateTimePicker();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(585, 126);
+            this.label3.Location = new System.Drawing.Point(233, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 0;
@@ -124,7 +125,7 @@
             // 
             this.txtBookid.Enabled = false;
             this.txtBookid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookid.Location = new System.Drawing.Point(682, 123);
+            this.txtBookid.Location = new System.Drawing.Point(375, 165);
             this.txtBookid.Name = "txtBookid";
             this.txtBookid.Size = new System.Drawing.Size(173, 22);
             this.txtBookid.TabIndex = 4;
@@ -158,12 +159,25 @@
             this.label10.Text = "Purchase Order Form";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnClear.Location = new System.Drawing.Point(737, 159);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(79, 30);
+            this.btnClear.TabIndex = 12;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnDelete.Location = new System.Drawing.Point(767, 159);
+            this.btnDelete.Location = new System.Drawing.Point(780, 123);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 30);
             this.btnDelete.TabIndex = 10;
@@ -189,7 +203,7 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAdd.Location = new System.Drawing.Point(377, 159);
+            this.btnAdd.Location = new System.Drawing.Point(586, 123);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(79, 30);
             this.btnAdd.TabIndex = 8;
@@ -295,7 +309,7 @@
             this.btnUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnUpdate.Location = new System.Drawing.Point(506, 159);
+            this.btnUpdate.Location = new System.Drawing.Point(685, 123);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 30);
             this.btnUpdate.TabIndex = 9;
@@ -323,6 +337,7 @@
             this.Controls.Add(this.cbBookname);
             this.Controls.Add(this.txtOrderNo);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnAdd);
@@ -365,6 +380,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnAdd;
